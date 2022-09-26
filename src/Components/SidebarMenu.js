@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavMenu from "./NavMenu";
 import './Sidebar.css';
 import { Button } from "flowbite-react";
+import Logo from "./logo.png"
 
 const SidebarMenu = () => {
     const [open, setOpen] = useState(true);
@@ -37,8 +38,8 @@ const SidebarMenu = () => {
 
                 <div className="flex gap-x-4 items-center">
                     <img
-                        src="https://flowbite.com/docs/images/logo.svg"
-                        className={`cursor-pointer duration-500 w-12 h-12 ${open && "rotate-[360deg]"
+                        src={Logo}
+                        className={`cursor-pointer duration-500 w-12 h-12 sm:w-10 sm:h-10 ${open && "rotate-[360deg]"
                             }`}
                     />
                     <h1
