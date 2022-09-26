@@ -5,6 +5,7 @@ import { faChartPie, faClipboard, faInbox, faUser, faShoppingBag, faArrowLeft, f
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavMenu from "./NavMenu";
 import './Sidebar.css';
+import { Button } from "flowbite-react";
 
 const SidebarMenu = () => {
     const [open, setOpen] = useState(true);
@@ -23,32 +24,32 @@ const SidebarMenu = () => {
         <div className="flex">
             <div
                 className={` ${open ? "w-72" : "w-20 "
-                    } h-screen p-5 pt-3 relative duration-300`}
+                    } h-screen p-5 pt-2.5 relative duration-300`}
             >
 
                 {/* <FontAwesomeIcon icon={faChevronLeft} className={`absolute cursor-pointer -right-3 top-5 w-6 h-6 rounded-full border-grey hide-sidebar ${!open && "rotate-180"}`}
                         onClick={() => setOpen(!open)} /> */}
                        
-                <button type="button" className={`text-white bg-[#D9D9D9] hover:bg-[#4299e1]/90 px-2 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 absolute cursor-pointer -right-3 top-5 w-7 h-7 rounded-full ${!open && "rotate-180"}`} 
+                <button type="button"  className={`bg-white border-grey-700 hover:bg-black px-2 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 absolute cursor-pointer -right-3 top-5 w-7 h-7 rounded-full ${!open && "rotate-180"}`} 
                 onClick= {() => setOpen(!open)} >
-                    <FontAwesomeIcon icon={faChevronLeft} />
+                    <FontAwesomeIcon icon={faChevronLeft} style={{color: '#A1A1A1', borderColor: "gray" }} />
                 </button>
 
                 <div className="flex gap-x-4 items-center">
                     <img
                         src="https://flowbite.com/docs/images/logo.svg"
-                        className={`cursor-pointer duration-500 ${open && "rotate-[360deg]"
+                        className={`cursor-pointer duration-500 w-12 h-12 ${open && "rotate-[360deg]"
                             }`}
                     />
                     <h1
                         className={`text-black text-left font-medium text-sm duration-200 ${!open && "scale-0"
                             }`}
                     >
-                        <span style={{ fontFamily: "Poppins", color: "#223E92", fontWeight: "bold", fontSize: "20px", textAlign: "left" }}>System</span>
-                        <span style={{ fontFamily: "Poppins", fontWeight: "bold", fontSize: "20px" }}>Top</span>
+                        <span style={{ color: "#223E92", fontWeight: "bold", fontSize: "20px", textAlign: "left" }}>System</span>
+                        <span style={{  fontWeight: "bold", fontSize: "20px" }}>Top</span>
                         <br />
-                        <span style={{ fontFamily: "Poppins", color: "#223E92", fontWeight: "bold", fontSize: "20px" }}>Up</span>
-                        <span style={{ fontFamily: "Poppins", fontWeight: "bold", fontSize: "20px" }}>24Jam</span>
+                        <span style={{  color: "#223E92", fontWeight: "bold", fontSize: "20px" }}>Up</span>
+                        <span style={{  fontWeight: "bold", fontSize: "20px" }}>24Jam</span>
                     </h1>
                 </div>
                 <ul className="pt-6">
