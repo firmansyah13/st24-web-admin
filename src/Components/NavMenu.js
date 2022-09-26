@@ -1,100 +1,162 @@
-import React from "react";
-import { Navbar, Dropdown, Avatar, Label, TextInput } from "flowbite-react";
+import React, {useState} from "react";
+import { Navbar, Dropdown, Avatar, Label, TextInput,  } from "flowbite-react";
 import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
+import { Transition } from "@headlessui/react";
 
 const NavMenu = () => {
+    const [isOpen, setIsOpen] = useState(false);
     return (
-        <Navbar
-            fluid={true}
-            rounded={true}
-        >
-            <div class="container flex flex-wrap justify-between items-center py-3.5 mx-auto sm:w-auto">
-                {/* <Navbar.Brand href="https://flowbite.com/"> */}
-                {/*<img
-                    src="https://flowbite.com/docs/images/logo.svg"
-                    className="mr-3 h-6 sm:h-9"
-                    alt="Flowbite Logo"
-                />
-                <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-                    Flowbite
-                </span> */}
-                {/* </Navbar.Brand> */}
-                <div className="flex items-center"></div>
-                <Navbar.Toggle />
-
-                <Navbar.Collapse>
-                    <form>
-                        {/* <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label> */}
-                        <div class="relative w-80 sm:w-auto">
-                            <div class="flex absolute inset-y-0 left-0 items-center pl-2 pointer-events-none">
-                                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        <div>
+            <nav className="bg-gray-800">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="flex items-center justify-between h-16">
+                        <div className="flex items-center">
+                            <div className="flex-shrink-0">
+                                <img
+                                    className="h-8 w-8"
+                                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                                    alt="Workflow"
+                                />
                             </div>
-                            <input type="search" id="default-search" class="block flex p-1 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required />
-                                {/* <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button> */}
+                            <div className="hidden md:block">
+                                <div className="ml-10 flex items-baseline space-x-4">
+                                    <a
+                                        href="#"
+                                        className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                                    >
+                                        Dashboard
+                                    </a>
+
+                                    <a
+                                        href="#"
+                                        className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                    >
+                                        Team
+                                    </a>
+
+                                    <a
+                                        href="#"
+                                        className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                    >
+                                        Projects
+                                    </a>
+
+                                    <a
+                                        href="#"
+                                        className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                    >
+                                        Calendar
+                                    </a>
+
+                                    <a
+                                        href="#"
+                                        className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                    >
+                                        Reports
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    </form>
-                    <Navbar.Link
-                        href="/navbars"
-                        active={true}
-                    >
-                        Home
-                    </Navbar.Link>
-                    <Navbar.Link href="/navbars">
-                        About
-                    </Navbar.Link>
-                    <Navbar.Link href="/navbars">
-                        Services
-                    </Navbar.Link>
-                    <Navbar.Link href="/navbars">
-                        Pricing
-                    </Navbar.Link>
-                    <Navbar.Link href="/navbars">
-                        Contact
-                    </Navbar.Link>
-                </Navbar.Collapse>
-            </div>
-        </Navbar >
-        // <Navbar
-        //     fluid={true}
-        //     rounded={true}
-        // >
-        //     <div className="flex-2 md:order-2 ml-4">
-        //         <Dropdown
-        //             arrowIcon={false}
-        //             inline={true}
-        //             label={<Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded={true} />}
-        //         >
-        //             <Dropdown.Header>
-        //                 <span className="block text-sm">
-        //                     Bonnie Green
-        //                 </span>
-        //                 <span className="block truncate text-sm font-medium">
-        //                     name@flowbite.com
-        //                 </span>
-        //             </Dropdown.Header>
-        //             <Dropdown.Item>
-        //                 Dashboard
-        //             </Dropdown.Item>
-        //             <Dropdown.Item>
-        //                 Settings
-        //             </Dropdown.Item>
-        //             <Dropdown.Item>
-        //                 Earnings
-        //             </Dropdown.Item>
-        //             <Dropdown.Divider />
-        //             <Dropdown.Item>
-        //                 Sign out
-        //             </Dropdown.Item>
-        //         </Dropdown>
-        //         <Navbar.Toggle />
-        //     </div>
-        //     <Navbar.Collapse className="navbar-collapse">
-        //         <div className="flex items-center">
-        //             <div className="flex space-x-1">
-        //             </div>
-        //         </div>
-        //     </Navbar.Collapse>
-        // </Navbar>
-    )
+                        <div className="-mr-2 flex md:hidden">
+                            <button
+                                onClick={() => setIsOpen(!isOpen)}
+                                type="button"
+                                className="bg-gray-900 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                aria-controls="mobile-menu"
+                                aria-expanded="false"
+                            >
+                                <span className="sr-only">Open main menu</span>
+                                {!isOpen ? (
+                                    <svg
+                                        className="block h-6 w-6"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M4 6h16M4 12h16M4 18h16"
+                                        />
+                                    </svg>
+                                ) : (
+                                    <svg
+                                        className="block h-6 w-6"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M6 18L18 6M6 6l12 12"
+                                        />
+                                    </svg>
+                                )}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <Transition
+                    show={isOpen}
+                    enter="transition ease-out duration-100 transform"
+                    enterFrom="opacity-0 scale-95"
+                    enterTo="opacity-100 scale-100"
+                    leave="transition ease-in duration-75 transform"
+                    leaveFrom="opacity-100 scale-100"
+                    leaveTo="opacity-0 scale-95"
+                >
+                    {(ref) => (
+                        <div className="md:hidden" id="mobile-menu">
+                            <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                                <a
+                                    href="#"
+                                    className="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium"
+                                >
+                                    Dashboard
+                                </a>
+
+                                <a
+                                    href="#"
+                                    className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                                >
+                                    Team
+                                </a>
+
+                                <a
+                                    href="#"
+                                    className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                                >
+                                    Projects
+                                </a>
+
+                                <a
+                                    href="#"
+                                    className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                                >
+                                    Calendar
+                                </a>
+
+                                <a
+                                    href="#"
+                                    className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                                >
+                                    Reports
+                                </a>
+                            </div>
+                        </div>
+                    )}
+                </Transition>
+            </nav>
+
+        </div>
+    );
 }
 export default NavMenu;
