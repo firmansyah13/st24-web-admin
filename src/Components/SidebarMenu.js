@@ -23,15 +23,14 @@ const SidebarMenu = () => {
         <div className="flex">
             <div
                 className={` ${open ? "w-72" : "w-20 "
-                    } h-screen p-5 pt-2.5 relative duration-300`}
+                    } h-screen p-5 pt-3 relative duration-300`}
             >
 
                 {/* <FontAwesomeIcon icon={faChevronLeft} className={`absolute cursor-pointer -right-3 top-5 w-6 h-6 rounded-full border-grey hide-sidebar ${!open && "rotate-180"}`}
                         onClick={() => setOpen(!open)} /> */}
                        
-                <button type="button" className={`text-white bg-[#3b5998] hover:bg-[#3b5998]/90 px-6 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 absolute cursor-pointer -right-3 top-5 w-6 h-6 rounded-full border-grey hide-sidebar ${!open && "rotate-180"}`} 
+                <button type="button" className={`text-white bg-[#D9D9D9] hover:bg-[#4299e1]/90 px-2 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 absolute cursor-pointer -right-3 top-5 w-7 h-7 rounded-full ${!open && "rotate-180"}`} 
                 onClick= {() => setOpen(!open)} >
-                    {/* <svg class="mr-2 -ml-1 w-4 h-4" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M279.1 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.4 0 225.4 0c-73.22 0-121.1 44.38-121.1 124.7v70.62H22.89V288h81.39v224h100.2V288z"></path></svg> */}
                     <FontAwesomeIcon icon={faChevronLeft} />
                 </button>
 
