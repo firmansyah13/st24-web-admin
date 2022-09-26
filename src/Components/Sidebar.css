@@ -1,0 +1,10 @@
+.container-fluid{
+    background-color:  #f8f9f9 ;
+    height: 100%;
+}
+
+.hide-sidebar{
+    border: #D9D9D9 1px !important;
+    /* background-color: white; */
+    color: #D9D9D9;
+}
