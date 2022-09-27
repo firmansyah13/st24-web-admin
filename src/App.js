@@ -1,29 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-import NavMenu from './Components/NavMenu';
-import SidebarMenu from './Components/SidebarMenu';
+import "./App.css";
+import RouterApp from "./Router";
+import SuperProvider from "./context";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      
-      <SidebarMenu />
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+      <SuperProvider>
+        <RouterApp />
+      </SuperProvider>
     </div>
   );
 }
-
-export default App;

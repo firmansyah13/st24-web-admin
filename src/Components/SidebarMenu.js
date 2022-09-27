@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './Sidebar.css';
 import Logo from "./logo.png";
 import Dashboard from "../Dashboard";
+import { AuthContext } from "../context/authContext";
 
 const SidebarMenu = () => {
     const [open, setOpen] = useState(true);
+    const auth = useContext(AuthContext);
     return (
         <div
             className={` ${open ? "w-72" : "w-20 "
@@ -119,7 +121,7 @@ const SidebarMenu = () => {
                         </a>
                     </li>
                     <li>
-                        <a class="flex items-center justify-center w-16 h-16 mt-auto bg-gray-800 hover:bg-gray-700 hover:text-gray-300" href="#">
+                        <a class="flex items-center justify-center w-16 h-16 mt-auto bg-gray-800 hover:bg-gray-700 hover:text-gray-300" href="#" onClick={auth.logout}>
                             <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
