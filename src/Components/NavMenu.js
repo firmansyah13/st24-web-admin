@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import { Navbar, Dropdown, Avatar, Label, TextInput,  } from "flowbite-react";
-import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
+// import { Navbar, Dropdown, Avatar, Label, TextInput,  } from "flowbite-react";
+// import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
 import { Transition } from "@headlessui/react";
 
 const NavMenu = () => {
