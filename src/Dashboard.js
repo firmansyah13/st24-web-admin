@@ -9,7 +9,7 @@ const Dashboard = () => {
             <div className="h-screen flex-1">
                 <NavMenu />
                 <div className="container-fluid">
-                    <h1 className="text-2xl font-semibold ">Home Page</h1>
+                    <h1 className="text-2xl font-semibold text-center ">Home Page</h1>
                 </div>
             </div>
         </div>
