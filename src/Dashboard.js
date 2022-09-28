@@ -1,7 +1,6 @@
 import React from "react";
 import NavMenu from "./Components/NavMenu";
 import Sidebar from "./Components/SidebarMenu";
-import { Table } from "flowbite-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleRight, } from "@fortawesome/free-solid-svg-icons";
 
