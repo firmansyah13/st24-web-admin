@@ -19,18 +19,18 @@ const SidebarMenu = () => {
             <div className="flex gap-x-4 items-center">
                 <img
                     src={Logo}
-                    className={`cursor-pointer duration-500 w-14 h-14 sm:h-9 sm:w-9 ${open && "rotate-[360deg]"
+                    className={`cursor-pointer duration-500 w-50 h-14 sm:h-9 sm:w-9 ${open && "rotate-[360deg]"
                         }`}
                 />
                 <h1
-                    className={`text-black text-left font-medium text-xl duration-200 ${!open && "scale-0"
+                    className={`text-black text-left font-medium text-xl duration-200 w-72 ${!open && "scale-0"
                         }`}
                 >
-                    <span style={{ color: "#1DBDED", fontWeight: "bold", fontSize: "20px", textAlign: "left" }}>System</span>
-                    <span style={{ color: "#FDFDFE", fontWeight: "bold", fontSize: "20px" }}>Top</span>
+                    <span style={{ color: "#1DBDED", fontWeight: "bold", fontSize: "18px", textAlign: "left"}}>System</span>
+                    <span style={{ color: "#FDFDFE", fontWeight: "bold", fontSize: "18px" }}>Top</span>
                     <br />
-                    <span style={{ color: "#1DBDED", fontWeight: "bold", fontSize: "20px" }}>Up</span>
-                    <span style={{ color: "#FDFDFE", fontWeight: "bold", fontSize: "20px" }}>24Jam</span>
+                    <span style={{ color: "#1DBDED", fontWeight: "bold", fontSize: "18px" }}>Up</span>
+                    <span style={{ color: "#FDFDFE", fontWeight: "bold", fontSize: "18px" }}>24Jam</span>
                 </h1>
             </div>
             <div className="overflow-y-auto">
