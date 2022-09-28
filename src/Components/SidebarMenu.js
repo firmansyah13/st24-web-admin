@@ -26,37 +26,37 @@ const SidebarMenu = () => {
     return (
         <div
             className={` ${open ? "w-72" : "w-20 "
-                } h-screen p-5 pt-2 relative duration-300`}
+                } h-auto p-5 pt-2 bg-[#11133E] relative duration-300`}
         >
-            <button className={`bg-white focus:ring-[#A1A1A1] focus:ring-1 ring-1 ring-[#A1A1A1] outline-grey hover:bg-black px-2 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 absolute cursor-pointer -right-3 top-5 w-7 h-7 rounded-full ${!open && "rotate-180"}`}
+            <button className={`bg-[#282B51] focus:ring-white focus:ring-1 ring-1 ring-white outline-grey hover:bg-black px-2 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 absolute cursor-pointer -right-3 top-5 w-7 h-7 rounded-full ${!open && "rotate-180"}`}
                 onClick={() => setOpen(!open)} >
-                <FontAwesomeIcon icon={faChevronLeft} style={{ color: '#A1A1A1', borderColor: "gray" }} />
+                <FontAwesomeIcon icon={faChevronLeft} style={{ color: '#FDFDFE' }} />
             </button>
 
             <div className="flex gap-x-4 items-center">
                 <img
                     src={Logo}
-                    className={`cursor-pointer duration-500 lg:w-11 lg:h-11 ${open && "rotate-[360deg]"
+                    className={`cursor-pointer duration-500 lg:w-11 lg:h-11 sm:h-9 sm:w-9 ${open && "rotate-[360deg]"
                         }`}
                 />
                 <h1
                     className={`text-black text-left font-medium text-xl duration-200 ${!open && "scale-0"
                         }`}
                 >
-                    {/* <span style={{fontWeight: "bold", fontSize: "20px"}}>ST - 24</span>
+                    {/* <span style={{color:"white", fontWeight: "bold", fontSize: "20px"}}>ST - 24</span>
                     <br/>
-                    <span style={{fontWeight: "bold", fontSize: "10px"}}>System Top Up</span>
-                    <span style={{fontWeight: "bold", fontSize: "10px"}}>24 Jam</span> */}
-                    <span style={{ color: "#223E92", fontWeight: "bold", fontSize: "20px", textAlign: "left" }}>System</span>
-                    <span style={{ fontWeight: "bold", fontSize: "20px" }}>Top</span>
+                    <span style={{color:"white",fontWeight: "bold", fontSize: "10px"}}>System Top Up</span>
+                    <span style={{color:"white",fontWeight: "bold", fontSize: "10px"}}>24 Jam</span> */}
+                    <span style={{ color: "#1DBDED", fontWeight: "bold", fontSize: "20px", textAlign: "left" }}>System</span>
+                    <span style={{ color: "#FDFDFE", fontWeight: "bold", fontSize: "20px" }}>Top</span>
                     <br />
-                    <span style={{ color: "#223E92", fontWeight: "bold", fontSize: "20px" }}>Up</span>
-                    <span style={{ fontWeight: "bold", fontSize: "20px" }}>24Jam</span>
+                    <span style={{ color: "#1DBDED", fontWeight: "bold", fontSize: "20px" }}>Up</span>
+                    <span style={{ color: "#FDFDFE", fontWeight: "bold", fontSize: "20px" }}>24Jam</span>
                 </h1>
             </div>
-            <div class="overflow-y-auto dark:bg-gray-800">
-                <ul class="pt-4 mt-4 space-y-2 dark:border-gray-700">
-                    {/* <li>
+            <div class="overflow-y-auto" style={{ background: "#11133E" }}>
+                <ul class="pt-4 mt-4 space-y-2" style={{ background: "#11133E" }}>
+                    <li>
                         <a href='/' class="flex items-center p-2 text-base font-bold text-[#828E98] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] active:bg-[#F3F9FE] active:text-[#223E92] hover:line-clamp-[#223E92] dark:hover:bg-gray-700 dark:text-white group">
                             <svg viewBox="0 0 18 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 text-[#828E98] transition duration-75 dark:text-gray-400 group-hover:text-[#223E92] dark:group-hover:text-white">
                                 <path d="M8.5022 11.25C8.5022 10.2835 7.7187 9.5 6.75224 9.5H4.75224C3.78574 9.5 3.00224 10.2835 3.00224 11.25V13.25C3.00224 14.2165 3.78574 15 4.75224 15H6.75224C7.7187 15 8.5022 14.2165 8.5022 13.25V11.25ZM4.75224 11H6.75224C6.89031 11 7.0022 11.1119 7.0022 11.25V13.25C7.0022 13.3881 6.89031 13.5 6.75224 13.5H4.75224C4.61417 13.5 4.50224 13.3881 4.50224 13.25V11.25C4.50224 11.1119 4.61417 11 4.75224 11ZM14.9997 11.25C14.9997 10.2835 14.2162 9.5 13.2497 9.5H11.2497C10.2832 9.5 9.4997 10.2835 9.4997 11.25V13.25C9.4997 14.2165 10.2832 15 11.2497 15H13.2497C14.2162 15 14.9997 14.2165 14.9997 13.25V11.25ZM11.2497 11H13.2497C13.3878 11 13.4997 11.1119 13.4997 11.25V13.25C13.4997 13.3881 13.3878 13.5 13.2497 13.5H11.2497C11.1116 13.5 10.9997 13.3881 10.9997 13.25V11.25C10.9997 11.1119 11.1116 11 11.2497 11ZM8.501 4.75C8.501 3.7835 7.7175 3 6.75098 3H4.75098C3.78448 3 3.00098 3.7835 3.00098 4.75V6.75C3.00098 7.7165 3.78448 8.5 4.75098 8.5H6.75098C7.7175 8.5 8.501 7.7165 8.501 6.75V4.75ZM4.75098 4.5H6.75098C6.88905 4.5 7.001 4.61193 7.001 4.75V6.75C7.001 6.88807 6.88905 7 6.75098 7H4.75098C4.61291 7 4.50098 6.88807 4.50098 6.75V4.75C4.50098 4.61193 4.61291 4.5 4.75098 4.5ZM14.9984 4.75C14.9984 3.7835 14.2149 3 13.2484 3H11.2484C10.2819 3 9.4984 3.7835 9.4984 4.75V6.75C9.4984 7.7165 10.2819 8.5 11.2484 8.5H13.2484C14.2149 8.5 14.9984 7.7165 14.9984 6.75V4.75ZM11.2484 4.5H13.2484C13.3865 4.5 13.4984 4.61193 13.4984 4.75V6.75C13.4984 6.88807 13.3865 7 13.2484 7H11.2484C11.1104 7 10.9984 6.88807 10.9984 6.75V4.75C10.9984 4.61193 11.1104 4.5 11.2484 4.5ZM3.25 0C1.45507 0 0 1.45507 0 3.25V14.75C0 16.5449 1.45507 18 3.25 18H14.75C16.5449 18 18 16.5449 18 14.75V3.25C18 1.45507 16.5449 0 14.75 0H3.25ZM1.5 3.25C1.5 2.2835 2.2835 1.5 3.25 1.5H14.75C15.7165 1.5 16.5 2.2835 16.5 3.25V14.75C16.5 15.7165 15.7165 16.5 14.75 16.5H3.25C2.2835 16.5 1.5 15.7165 1.5 14.75V3.25Z" />
@@ -95,83 +95,102 @@ const SidebarMenu = () => {
                             </svg>
                             <span class="ml-3">&nbsp;Report</span>
                         </a>
-                    </li>  */}
-                    <li className="relative" style={{ marginLeft: -10 }}>
-                        <Sidebar>
-                            <Sidebar.Items>
-                                <Sidebar.ItemGroup>
-                                    <Sidebar.Item
-                                        href="/"
-                                        icon={HiOutlineTemplate}>
-                                        Dashboard
-                                    </Sidebar.Item>
-                                    <Sidebar.Item
-                                        href="#"
-                                        icon={HiOutlineChat}>
-                                        Pesan
-                                    </Sidebar.Item>
-                                    <Sidebar.Item
-                                        href="#"
-                                        icon={HiOutlineReceiptRefund}>
-                                        Rebate
-                                    </Sidebar.Item>
-                                    <Sidebar.Item
-                                        href="#"
-                                        icon={HiOutlineTicket}>
-                                        Tiket Deposit
-                                    </Sidebar.Item>
-                                    <Sidebar.Item
-                                        href="#"
-                                        icon={HiOutlineClipboardList}>
-                                        Report
-                                    </Sidebar.Item>
-                                    <Sidebar.Collapse
-                                        icon={HiOutlineCog}
-                                        label="Setting"
-                                    >
-                                        <Sidebar.Item href="#">
-                                            Products
-                                        </Sidebar.Item>
-                                    </Sidebar.Collapse>
-                                </Sidebar.ItemGroup>
-                                <Sidebar.ItemGroup>
-                                    <Sidebar.Item
-                                        href="#"
-                                        icon={HiOutlineFolder}>
-                                        Management
-                                    </Sidebar.Item>
-                                    <Sidebar.Item
-                                        href="#"
-                                        icon={HiOutlineUserCircle}>
-                                        User
-                                    </Sidebar.Item>
-                                    <Sidebar.Item
-                                        href="#"
-                                        icon={HiOutlineShoppingCart}>
-                                        Toko
-                                    </Sidebar.Item>
-                                    <Sidebar.Item
-                                        href="#"
-                                        icon={HiOutlineServer}>
-                                        Produk
-                                    </Sidebar.Item>
-                                    <Sidebar.Item
-                                        href="#"
-                                        icon={HiOutlineCurrencyDollar}>
-                                        Harga
-                                    </Sidebar.Item>
-                                </Sidebar.ItemGroup>
-                                    <Sidebar.ItemGroup>
-                                        <Sidebar.Item
-                                            href="#"
-                                            icon={HiOutlineLogout}>
-                                            Log Out
-                                        </Sidebar.Item>
-                                    </Sidebar.ItemGroup>
-                            </Sidebar.Items>
-                        </Sidebar>
                     </li>
-                    {/* <li>
+                    {/* <li> */}
+                    {/* <Sidebar style={{ width: 'auto', marginLeft: "-10px", }}>
+                        <Sidebar.Items style={{ color: "white", background: "#11133E" }}>
+                            <Sidebar.ItemGroup style={{ background: "#11133E" }}>
+                                <a href='/' class="flex items-center p-2 text-base font-bold text-[#C3C6DB] rounded-lg transition duration-75 hover:bg-[#223E92] hover:text-[#FDFDFE] active:bg-[#F3F9FE] active:text-[#223E92] hover:line-clamp-[#223E92] dark:hover:bg-gray-700 dark:text-white group">
+                                    <svg viewBox="0 0 18 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 text-[#828E98] transition duration-75 dark:text-gray-400 group-hover:text-[#FDFDFE] dark:group-hover:text-white">
+                                        <path d="M8.5022 11.25C8.5022 10.2835 7.7187 9.5 6.75224 9.5H4.75224C3.78574 9.5 3.00224 10.2835 3.00224 11.25V13.25C3.00224 14.2165 3.78574 15 4.75224 15H6.75224C7.7187 15 8.5022 14.2165 8.5022 13.25V11.25ZM4.75224 11H6.75224C6.89031 11 7.0022 11.1119 7.0022 11.25V13.25C7.0022 13.3881 6.89031 13.5 6.75224 13.5H4.75224C4.61417 13.5 4.50224 13.3881 4.50224 13.25V11.25C4.50224 11.1119 4.61417 11 4.75224 11ZM14.9997 11.25C14.9997 10.2835 14.2162 9.5 13.2497 9.5H11.2497C10.2832 9.5 9.4997 10.2835 9.4997 11.25V13.25C9.4997 14.2165 10.2832 15 11.2497 15H13.2497C14.2162 15 14.9997 14.2165 14.9997 13.25V11.25ZM11.2497 11H13.2497C13.3878 11 13.4997 11.1119 13.4997 11.25V13.25C13.4997 13.3881 13.3878 13.5 13.2497 13.5H11.2497C11.1116 13.5 10.9997 13.3881 10.9997 13.25V11.25C10.9997 11.1119 11.1116 11 11.2497 11ZM8.501 4.75C8.501 3.7835 7.7175 3 6.75098 3H4.75098C3.78448 3 3.00098 3.7835 3.00098 4.75V6.75C3.00098 7.7165 3.78448 8.5 4.75098 8.5H6.75098C7.7175 8.5 8.501 7.7165 8.501 6.75V4.75ZM4.75098 4.5H6.75098C6.88905 4.5 7.001 4.61193 7.001 4.75V6.75C7.001 6.88807 6.88905 7 6.75098 7H4.75098C4.61291 7 4.50098 6.88807 4.50098 6.75V4.75C4.50098 4.61193 4.61291 4.5 4.75098 4.5ZM14.9984 4.75C14.9984 3.7835 14.2149 3 13.2484 3H11.2484C10.2819 3 9.4984 3.7835 9.4984 4.75V6.75C9.4984 7.7165 10.2819 8.5 11.2484 8.5H13.2484C14.2149 8.5 14.9984 7.7165 14.9984 6.75V4.75ZM11.2484 4.5H13.2484C13.3865 4.5 13.4984 4.61193 13.4984 4.75V6.75C13.4984 6.88807 13.3865 7 13.2484 7H11.2484C11.1104 7 10.9984 6.88807 10.9984 6.75V4.75C10.9984 4.61193 11.1104 4.5 11.2484 4.5ZM3.25 0C1.45507 0 0 1.45507 0 3.25V14.75C0 16.5449 1.45507 18 3.25 18H14.75C16.5449 18 18 16.5449 18 14.75V3.25C18 1.45507 16.5449 0 14.75 0H3.25ZM1.5 3.25C1.5 2.2835 2.2835 1.5 3.25 1.5H14.75C15.7165 1.5 16.5 2.2835 16.5 3.25V14.75C16.5 15.7165 15.7165 16.5 14.75 16.5H3.25C2.2835 16.5 1.5 15.7165 1.5 14.75V3.25Z" />
+                                    </svg>
+                                    <span class="ml-3">Dashboard</span>
+                                </a>
+                                <a href="#" class="flex items-center p-2 text-base font-bold text-[#C3C6DB] rounded-lg transition duration-75 hover:bg-[#223E92] hover:text-[#FDFDFE] dark:hover:bg-gray-700 dark:text-white group">
+                                    <svg viewBox="0 0 20 21" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 text-[#828E98] transition duration-75 dark:text-gray-400 group-hover:text-[#FDFDFE] dark:group-hover:text-white">
+                                        <path d="M10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C8.3817 20 6.81782 19.6146 5.41286 18.888L1.58704 19.9553C0.92212 20.141 0.23258 19.7525 0.04691 19.0876C-0.01454 18.8676 -0.0145099 18.6349 0.0469501 18.4151L1.11461 14.5922C0.38637 13.186 0 11.6203 0 10C0 4.47715 4.47715 0 10 0ZM10 1.5C5.30558 1.5 1.5 5.30558 1.5 10C1.5 11.4696 1.87277 12.8834 2.57303 14.1375L2.72368 14.4072L1.61096 18.3914L5.59755 17.2792L5.86709 17.4295C7.12006 18.1281 8.5322 18.5 10 18.5C14.6944 18.5 18.5 14.6944 18.5 10C18.5 5.30558 14.6944 1.5 10 1.5ZM6.75 11H11.2483C11.6625 11 11.9983 11.3358 11.9983 11.75C11.9983 12.1297 11.7161 12.4435 11.35 12.4932L11.2483 12.5H6.75C6.33579 12.5 6 12.1642 6 11.75C6 11.3703 6.28215 11.0565 6.64823 11.0068L6.75 11H11.2483H6.75ZM6.75 7.5H13.2545C13.6687 7.5 14.0045 7.83579 14.0045 8.25C14.0045 8.6297 13.7223 8.9435 13.3563 8.9932L13.2545 9H6.75C6.33579 9 6 8.6642 6 8.25C6 7.8703 6.28215 7.55651 6.64823 7.50685L6.75 7.5H13.2545H6.75Z" />
+                                    </svg>
+                                    <span class="ml-3">&nbsp;Pesan</span>
+                                </a>
+                                <a href="#" class="flex items-center p-2 text-base font-bold text-[#C3C6DB] rounded-lg transition duration-75 hover:bg-[#223E92] hover:text-[#FDFDFE] dark:hover:bg-gray-700 dark:text-white group">
+                                    <svg viewBox="0 0 21 21" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 text-[#828E98] transition duration-75 dark:text-gray-400 group-hover:text-[#FDFDFE] dark:group-hover:text-white">
+                                        <path d="M19.9998 2.25C19.9998 1.00736 18.9925 0 17.7498 0H12.2845C11.4218 0 10.5946 0.34297 9.985 0.95334L1.48531 9.4632C0.216994 10.7334 0.218624 12.7913 1.48909 14.0592L5.95079 18.5143C7.22195 19.7807 9.2777 19.7798 10.5472 18.5129L10.5502 18.5099C10.3111 17.9908 10.1474 17.4401 10.0641 16.8745L9.487 17.4518C8.8033 18.134 7.69493 18.1345 7.01006 17.4522L2.54884 12.9977C1.86898 12.3191 1.86389 11.2207 2.53412 10.5358L11.0463 2.01333C11.3745 1.68467 11.82 1.5 12.2845 1.5H17.7498C18.164 1.5 18.4998 1.83579 18.4998 2.25V7.71196C18.4998 8.176 18.3155 8.6211 17.9874 8.9492L16.8731 10.0639C17.4387 10.147 17.9894 10.3106 18.5085 10.5496L19.0482 10.0098C19.6575 9.4003 19.9998 8.5738 19.9998 7.71196V2.25ZM16.4998 5.00216C16.4998 4.17374 15.8282 3.50218 14.9998 3.50218C14.1714 3.50218 13.4998 4.17374 13.4998 5.00216C13.4998 5.83057 14.1714 6.50213 14.9998 6.50213C15.8282 6.50213 16.4998 5.83057 16.4998 5.00216ZM12.7803 10.2803C13.0732 9.9874 13.0732 9.5126 12.7803 9.2197C12.4874 8.9268 12.0126 8.9268 11.7197 9.2197L9.7197 11.2197C9.4268 11.5126 9.4268 11.9874 9.7197 12.2803L11.7197 14.2803C12.0126 14.5732 12.4874 14.5732 12.7803 14.2803C13.0732 13.9874 13.0732 13.5126 12.7803 13.2197L12.0607 12.5H16C16.6922 12.5 17.3689 12.7053 17.9445 13.0899C18.5201 13.4744 18.9687 14.0211 19.2336 14.6606C19.4985 15.3001 19.5678 16.0039 19.4327 16.6828C19.2977 17.3617 18.9644 17.9854 18.4749 18.4749C17.9854 18.9644 17.3617 19.2977 16.6828 19.4327C16.0039 19.5678 15.3001 19.4985 14.6606 19.2336C14.0211 18.9687 13.4744 18.5201 13.0899 17.9445C12.7053 17.3689 12.5 16.6922 12.5 16C12.5 15.5858 12.1642 15.25 11.75 15.25C11.3358 15.25 11 15.5858 11 16C11 16.9889 11.2932 17.9556 11.8427 18.7779C12.3921 19.6001 13.173 20.241 14.0866 20.6194C15.0002 20.9978 16.0055 21.0969 16.9755 20.9039C17.9454 20.711 18.8363 20.2348 19.5355 19.5355C20.2348 18.8363 20.711 17.9454 20.9039 16.9755C21.0969 16.0055 20.9978 15.0002 20.6194 14.0866C20.241 13.173 19.6001 12.3921 18.7779 11.8427C17.9556 11.2932 16.9889 11 16 11H12.0607L12.7803 10.2803Z" />
+                                    </svg>
+                                    <span class="ml-3">&nbsp;Rebate</span>
+                                </a>
+                                <a href="#" class="flex items-center p-2 text-base font-bold text-[#C3C6DB] rounded-lg transition duration-75 hover:bg-[#223E92] hover:text-[#FDFDFE] dark:hover:bg-gray-700 dark:text-white group">
+                                    <svg viewBox="0 0 20 14" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 text-[#828E98] transition duration-75 dark:text-gray-400 group-hover:text-[#FDFDFE] dark:group-hover:text-white">
+                                        <path d="M18.25 0C19.2165 0 20.0001 0.7835 20.0001 1.74996V4.01021C20.0001 4.40055 19.7008 4.72565 19.3118 4.75772C18.1512 4.85342 17.25 5.8273 17.25 7C17.25 8.1727 18.1512 9.1466 19.3118 9.2423C19.7008 9.2744 20.0001 9.5995 20.0001 9.9898V12.25C20.0001 13.2165 19.2165 14 18.25 14H1.75C0.7835 14 0 13.2165 0 12.2499L0.000289917 9.9896C0.000339917 9.5994 0.29964 9.2744 0.68856 9.2423C1.84903 9.1464 2.75 8.1726 2.75 7C2.75 5.8274 1.84903 4.8536 0.68856 4.75775C0.29964 4.72562 0.000339917 4.40063 0.000289917 4.01039L0 1.75C0 0.7835 0.7835 0 1.75 0H18.25ZM18.5001 3.38474V1.75C18.5001 1.61193 18.3881 1.5 18.25 1.5H1.75C1.61193 1.5 1.5 1.61193 1.5 1.7499L1.50021 3.38483C3.09313 3.82406 4.25 5.284 4.25 7C4.25 8.716 3.09313 10.1759 1.50021 10.6152L1.5 12.25C1.5 12.3881 1.61193 12.5 1.75 12.5H18.25C18.3881 12.5 18.5001 12.3881 18.5001 12.25V10.6153C16.907 10.1761 15.75 8.7161 15.75 7C15.75 5.3525 16.8163 3.94108 18.3111 3.44229L18.5001 3.38474Z" />
+                                    </svg>
+                                    <span class="ml-3">&nbsp;Tiket Deposit</span>
+                                </a>
+                                <a href="#" class="flex items-center p-2 text-base font-bold text-[#C3C6DB] rounded-lg transition duration-75 hover:bg-[#223E92] hover:text-[#FDFDFE] dark:hover:bg-gray-700 dark:text-white group">
+                                    <svg viewBox="0 0 16 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 text-[#828E98] transition duration-75 dark:text-gray-400 group-hover:text-[#FDFDFE] dark:group-hover:text-white">
+                                        <path d="M9.75 0C10.9409 0 11.9156 0.92516 11.9948 2.09595L12 2.25C12 2.16531 11.9953 2.0817 11.9862 1.99944L13.75 2C14.9926 2 16 3.00736 16 4.25V17.75C16 18.9926 14.9926 20 13.75 20H2.25C1.00736 20 0 18.9926 0 17.75V4.25C0 3.00736 1.00736 2 2.25 2L4.01379 1.99944C4.00733 2.05774 4.0031 2.11671 4.00119 2.17626L4 2.25C4 1.00736 5.00736 0 6.25 0H9.75ZM9.75 4.5H6.25C5.45595 4.5 4.75797 4.08867 4.35751 3.46746L4.37902 3.5002L2.25 3.5C1.83579 3.5 1.5 3.83579 1.5 4.25V17.75C1.5 18.1642 1.83579 18.5 2.25 18.5H13.75C14.1642 18.5 14.5 18.1642 14.5 17.75V4.25C14.5 3.83579 14.1642 3.5 13.75 3.5L11.621 3.5002L11.6425 3.46746C11.242 4.08867 10.5441 4.5 9.75 4.5ZM9.75 1.5H6.25C5.83579 1.5 5.5 1.83579 5.5 2.25C5.5 2.66421 5.83579 3 6.25 3H9.75C10.1642 3 10.5 2.66421 10.5 2.25C10.5 1.83579 10.1642 1.5 9.75 1.5ZM4 12.5H8C8.4142 12.5 8.75 12.1642 8.75 11.75C8.75 11.3358 8.4142 11 8 11H4C3.58579 11 3.25 11.3358 3.25 11.75C3.25 12.1642 3.58579 12.5 4 12.5ZM4 8.5H12C12.4142 8.5 12.75 8.1642 12.75 7.75C12.75 7.33579 12.4142 7 12 7H4C3.58579 7 3.25 7.33579 3.25 7.75C3.25 8.1642 3.58579 8.5 4 8.5ZM4 16.5H10C10.4142 16.5 10.75 16.1642 10.75 15.75C10.75 15.3358 10.4142 15 10 15H4C3.58579 15 3.25 15.3358 3.25 15.75C3.25 16.1642 3.58579 16.5 4 16.5Z" />
+                                    </svg>
+                                    <span class="ml-3">&nbsp;Report</span>
+                                </a>
+                                <Sidebar.Collapse
+                                    label="Setting"
+                                >
+                                    <Sidebar.Item
+                                        href="#"
+                                        style={{ color: "white" }}>
+                                        Products
+                                    </Sidebar.Item>
+                                </Sidebar.Collapse>
+                            </Sidebar.ItemGroup>
+                            <Sidebar.ItemGroup>
+                                <Sidebar.Item
+                                    href="#"
+                                    icon={HiOutlineFolder}
+                                    style={{ color: "white" }}
+                                >
+                                    Management
+                                </Sidebar.Item>
+                                <Sidebar.Item
+                                    href="#"
+                                    icon={HiOutlineUserCircle}
+                                    style={{ color: "white" }}
+                                >
+                                    User
+                                </Sidebar.Item>
+                                <Sidebar.Item
+                                    href="#"
+                                    icon={HiOutlineShoppingCart}
+                                    style={{ color: "white" }}
+                                >
+                                    Toko
+                                </Sidebar.Item>
+                                <Sidebar.Item
+                                    href="#"
+                                    icon={HiOutlineServer}
+                                    style={{ color: "white" }}
+                                >
+                                    Produk
+                                </Sidebar.Item>
+                                <Sidebar.Item
+                                    href="#"
+                                    icon={HiOutlineCurrencyDollar}
+                                    style={{ color: "white" }}
+                                    className="text-white"
+                                >
+                                    Harga
+                                </Sidebar.Item>
+                            </Sidebar.ItemGroup>
+                            <Sidebar.ItemGroup>
+                                <Sidebar.Item
+                                    href="#"
+                                    icon={HiOutlineLogout}
+                                    style={{ color: "white" }}
+                                >
+                                    Log Out
+                                </Sidebar.Item>
+                            </Sidebar.ItemGroup>
+                        </Sidebar.Items>
+                    </Sidebar> */}
+                    {/* </li> */}
+                    <li>
                         <a href="#" class="flex items-center p-2 text-base font-bold text-[#828E98] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group">
                             <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 text-[#828E98] transition duration-75 dark:text-gray-400 group-hover:text-[#223E92] dark:group-hover:text-white">
                                 <path d="M10 0C15.523 0 20 4.478 20 10C20 15.522 15.523 20 10 20C4.477 20 0 15.522 0 10C0 4.478 4.477 0 10 0ZM10 1.667C5.405 1.667 1.667 5.405 1.667 10C1.667 14.595 5.405 18.333 10 18.333C14.595 18.333 18.333 14.595 18.333 10C18.333 5.405 14.595 1.667 10 1.667ZM9.25 4C9.6295 4 9.9435 4.28233 9.9931 4.64827L10 4.75V10H13.25C13.664 10 14 10.336 14 10.75C14 11.1295 13.7177 11.4435 13.3517 11.4931L13.25 11.5H9.25C8.8705 11.5 8.5565 11.2177 8.5069 10.8517L8.5 10.75V4.75C8.5 4.336 8.836 4 9.25 4Z" />
@@ -186,19 +205,9 @@ const SidebarMenu = () => {
                             </svg>
                             <span class="ml-3">&nbsp;Setting</span>
                         </a>
-                    </li> */}
-                </ul>
-                {/* <ul class="pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
-                    <li>
-                        <a href="#" class="flex items-center p-2 text-base font-bold text-[#828E98] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group">
-                            <svg viewBox="0 0 21 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 text-[#828E98] transition duration-75 dark:text-gray-400 group-hover:text-[#223E92] dark:group-hover:text-white">
-                                <path d="M3.5 4C3.5 2.61929 4.61929 1.5 6 1.5C7.38071 1.5 8.5 2.61929 8.5 4C8.5 5.38071 7.38071 6.5 6 6.5C4.61929 6.5 3.5 5.38071 3.5 4ZM6 0C3.79086 0 2 1.79086 2 4C2 6.20914 3.79086 8 6 8C8.2091 8 10 6.20914 10 4C10 1.79086 8.2091 0 6 0ZM13.5 5C13.5 4.17157 14.1716 3.5 15 3.5C15.8284 3.5 16.5 4.17157 16.5 5C16.5 5.82843 15.8284 6.5 15 6.5C14.1716 6.5 13.5 5.82843 13.5 5ZM15 2C13.3431 2 12 3.34315 12 5C12 6.65685 13.3431 8 15 8C16.6569 8 18 6.65685 18 5C18 3.34315 16.6569 2 15 2ZM2.25 10C1.00736 10 0 11.0074 0 12.25V12.5011V12.5022L1.00136e-05 12.5048L7.00951e-05 12.5111L0.000349998 12.5277C0.000639998 12.5406 0.00116999 12.5571 0.00209999 12.5771C0.00395999 12.6169 0.00744991 12.6705 0.0139799 12.7358C0.0270099 12.8661 0.05233 13.045 0.10165 13.2564C0.19995 13.6776 0.39654 14.2404 0.79183 14.8051C1.61066 15.9749 3.17178 17 6 17C7.36897 17 8.4411 16.7598 9.2758 16.3793C9.1268 15.8851 9.035 15.366 9.0082 14.8299C8.3633 15.2108 7.41267 15.5 6 15.5C3.57822 15.5 2.51434 14.6501 2.02067 13.9449C1.75971 13.5721 1.62818 13.1974 1.56241 12.9155C1.5297 12.7753 1.514 12.6612 1.50653 12.5865C1.50281 12.5493 1.50117 12.5222 1.50047 12.5072L1.5 12.4947V12.25C1.5 11.8358 1.83579 11.5 2.25 11.5H9.7322C9.9807 11.0233 10.2865 10.5813 10.6405 10.1831C10.3674 10.0653 10.0663 10 9.75 10H2.25ZM12.2772 10.9759C12.592 12.0661 11.9376 13.1995 10.836 13.4721L10.2518 13.6166C10.2069 13.9043 10.1836 14.1995 10.1836 14.5003C10.1836 14.815 10.2091 15.1235 10.2582 15.4237L10.7976 15.5536C11.9102 15.8216 12.5715 16.9666 12.2476 18.0641L12.0613 18.6954C12.5005 19.081 13.0009 19.3942 13.5455 19.6169L14.0388 19.0982C14.8273 18.269 16.1496 18.2692 16.9379 19.0987L17.4366 19.6235C17.9801 19.4032 18.4801 19.093 18.9194 18.7106L18.7214 18.0247C18.4066 16.9344 19.061 15.801 20.1626 15.5285L20.7463 15.384C20.7912 15.0963 20.8145 14.8011 20.8145 14.5003C20.8145 14.1856 20.789 13.877 20.7399 13.5767L20.2009 13.4469C19.0884 13.179 18.4271 12.034 18.751 10.9364L18.9371 10.3056C18.498 9.9198 17.9975 9.6066 17.4529 9.3838L16.9598 9.9023C16.1713 10.7316 14.849 10.7313 14.0607 9.9018L13.5619 9.377C13.0184 9.5972 12.5184 9.9073 12.0791 10.2897L12.2772 10.9759ZM15.4991 16.0003C14.6984 16.0003 14.0494 15.3287 14.0494 14.5003C14.0494 13.6719 14.6984 13.0003 15.4991 13.0003C16.2997 13.0003 16.9487 13.6719 16.9487 14.5003C16.9487 15.3287 16.2997 16.0003 15.4991 16.0003Z" />
-                            </svg>\
-                            <span class="ml-4">Management</span>
-                        </a>
                     </li>
                 </ul>
-                <ul class="pt-4 mt-4 space-y-2 border-t border-gray-200 bottom-0 relative dark:border-gray-700">
+                <ul class="pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
                     <li>
                         <a href="#" class="flex items-center p-2 text-base font-bold text-[#828E98] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group">
                             <svg viewBox="0 0 21 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 text-[#828E98] transition duration-75 dark:text-gray-400 group-hover:text-[#223E92] dark:group-hover:text-white">
@@ -207,7 +216,17 @@ const SidebarMenu = () => {
                             <span class="ml-4">Management</span>
                         </a>
                     </li>
-                </ul> */}
+                </ul>
+                <ul class="pt-4 mt-4 space-y-2 border-t border-gray-200 bottom-0 relative dark:border-gray-700">
+                    <li>
+                        <a href="#" class="flex items-center p-2 text-base font-bold text-[#828E98] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group">
+                            <svg viewBox="0 0 19 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 text-[#828E98] transition duration-75 dark:text-gray-400 group-hover:text-[#223E92] dark:group-hover:text-white">
+                                <path d="M12 17.4C12.3313 17.4 12.6 17.1313 12.6 16.8C12.6 16.4687 12.3313 16.2 12 16.2H4.19998C2.87449 16.2 1.79998 15.1255 1.79998 13.8V4.20001C1.79998 2.87452 2.87449 1.80001 4.19998 1.80001H12C12.3313 1.80001 12.6 1.53137 12.6 1.20001C12.6 0.868638 12.3313 0.600006 12 0.600006H4.19998C2.21176 0.600006 0.599976 2.21179 0.599976 4.20001V13.8C0.599976 15.7883 2.21176 17.4 4.19998 17.4H12ZM13.3757 4.37575C13.61 4.14142 13.9899 4.14142 14.2243 4.37575L18.4243 8.57575C18.6585 8.81006 18.6585 9.18997 18.4243 9.42432L14.2243 13.6243C13.9899 13.8586 13.61 13.8586 13.3757 13.6243C13.1414 13.39 13.1414 13.01 13.3757 12.7757L16.5515 9.60001H5.99998C5.66861 9.60001 5.39998 9.33133 5.39998 9.00001C5.39998 8.66864 5.66861 8.40001 5.99998 8.40001H16.5515L13.3757 5.22427C13.1414 4.98995 13.1414 4.61006 13.3757 4.37575Z" />
+                            </svg>
+                            <span class="ml-4">Log Out</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     );

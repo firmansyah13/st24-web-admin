@@ -19,7 +19,7 @@ const NavMenu = () => {
                                 /> */}
                             </div>
                             <div className="hidden justify-end text-right md:block">
-                                <div className="ml-10 flex items-right space-x-4">
+                                {/* <div className="ml-10 flex items-right space-x-4">
                                     <a
                                         href="#"
                                         className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
@@ -54,7 +54,7 @@ const NavMenu = () => {
                                     >
                                         Reports
                                     </a>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                         <div className="-mr-2 flex md:hidden">
