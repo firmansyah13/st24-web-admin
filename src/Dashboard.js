@@ -12,7 +12,7 @@ const Dashboard = () => {
                 <NavMenu />
                 <div className="container-fluid relative ml-4 mt-4">
                     <h1 className="text-2xl font-semibold text-left ">Dashboard</h1>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-4 gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-4 gap-4">
                         <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
                             <div class="flex justify-center items-center w-14 h-14 bg-white rounded-full transition-all duration-300 transform group-hover:rotate-12">
                                 <svg width="30" height="30" viewBox="0 0 384 512" stroke="currentColor" class="stroke-current fill-blue-800 dark:text-gray-800 transform transition-transform duration-500 ease-in-out"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M101.5 64C114.6 26.7 150.2 0 192 0s77.4 26.7 90.5 64H320c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h37.5zM224 96c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32zM160 368c0 8.8 7.2 16 16 16H304c8.8 0 16-7.2 16-16s-7.2-16-16-16H176c-8.8 0-16 7.2-16 16zM96 392c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zm64-120c0 8.8 7.2 16 16 16H304c8.8 0 16-7.2 16-16s-7.2-16-16-16H176c-8.8 0-16 7.2-16 16zM96 296c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24z" /></svg>
@@ -22,9 +22,9 @@ const Dashboard = () => {
                                 <p>Jumlah Produk</p>
                             </div>
                             <div className="text-right">
-                                <a href="#">
+                                {/* <a href="#">
                                     <FontAwesomeIcon icon={faArrowAltCircleRight} />
-                                </a>
+                                </a> */}
                             </div>
                         </div>
                         <div class="bg-green-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-green-600 dark:border-gray-600 text-white font-medium group">
@@ -36,9 +36,9 @@ const Dashboard = () => {
                                 <p>Transaksi Selesai</p>
                             </div>
                             <div className="text-right">
-                                <a href="#">
+                                {/* <a href="#">
                                     <FontAwesomeIcon icon={faArrowAltCircleRight} />
-                                </a>
+                                </a> */}
                             </div>
                         </div>
                         <div class="bg-amber-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-amber-600 dark:border-gray-600 text-white font-medium group">
@@ -50,9 +50,24 @@ const Dashboard = () => {
                                 <p>Transaksi Belum Diproses</p>
                             </div>
                             <div className="text-right">
-                                <a href="#">
+                                {/* <a href="#">
                                     <FontAwesomeIcon icon={faArrowAltCircleRight} />
-                                </a>
+                                </a> */}
+                            </div>
+                        </div>
+                        <div class="bg-red-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-red-600 dark:border-gray-600 text-white font-medium group">
+                            <div class="flex justify-center items-center w-14 h-14 bg-white rounded-full transition-all duration-300 transform group-hover:rotate-12">
+                            <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" stroke="currentColor" class="stroke-current fill-blue-800 dark:text-gray-800 transform transition-transform duration-500 ease-in-out"><path d="M175 175C184.4 165.7 199.6 165.7 208.1 175L255.1 222.1L303 175C312.4 165.7 327.6 165.7 336.1 175C346.3 184.4 346.3 199.6 336.1 208.1L289.9 255.1L336.1 303C346.3 312.4 346.3 327.6 336.1 336.1C327.6 346.3 312.4 346.3 303 336.1L255.1 289.9L208.1 336.1C199.6 346.3 184.4 346.3 175 336.1C165.7 327.6 165.7 312.4 175 303L222.1 255.1L175 208.1C165.7 199.6 165.7 184.4 175 175V175zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z"/></svg>
+                                {/* <svg width="30" height="30" viewBox="0 0 384 512" stroke="currentColor" class="stroke-current fill-blue-800 dark:text-gray-800 transform transition-transform duration-500 ease-in-out"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M101.5 64C114.6 26.7 150.2 0 192 0s77.4 26.7 90.5 64H320c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h37.5zM224 96c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32zM160 368c0 8.8 7.2 16 16 16H304c8.8 0 16-7.2 16-16s-7.2-16-16-16H176c-8.8 0-16 7.2-16 16zM96 392c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zm64-120c0 8.8 7.2 16 16 16H304c8.8 0 16-7.2 16-16s-7.2-16-16-16H176c-8.8 0-16 7.2-16 16zM96 296c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24z" /></svg> */}
+                            </div>
+                            <div class="text-center">
+                                <p class="text-2xl">1,257</p>
+                                <p>Transaksi Gagal</p>
+                            </div>
+                            <div className="text-right">
+                                {/* <a href="#">
+                                    <FontAwesomeIcon icon={faArrowAltCircleRight} />
+                                </a> */}
                             </div>
                         </div>
                     </div>

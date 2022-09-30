@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { faChevronLeft, faChevronDown} from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './Sidebar.css';
 import Logo from "./logo.svg";
@@ -26,11 +26,14 @@ const SidebarMenu = () => {
                     className={`text-black text-left font-medium text-xl duration-200 w-72 ${!open && "scale-0"
                         }`}
                 >
-                    <span style={{ color: "#1DBDED", fontWeight: "bold", fontSize: "18px", textAlign: "left"}}>System</span>
-                    <span style={{ color: "#FDFDFE", fontWeight: "bold", fontSize: "18px" }}>Top</span>
-                    <br />
-                    <span style={{ color: "#1DBDED", fontWeight: "bold", fontSize: "18px" }}>Up</span>
-                    <span style={{ color: "#FDFDFE", fontWeight: "bold", fontSize: "18px" }}>24Jam</span>
+                    <div className="break-normal">
+                        <span style={{ color: "#1DBDED", fontWeight: "bold", fontSize: "18px", textAlign: "left", paddingBottomg: "-10px" }}>System</span>
+                        <span style={{ color: "#FDFDFE", fontWeight: "bold", fontSize: "18px" }}>Top</span>
+                    </div>
+                    <div className="break-normal">
+                        <span style={{ color: "#1DBDED", fontWeight: "bold", fontSize: "18px" }}>Up</span>
+                        <span style={{ color: "#FDFDFE", fontWeight: "bold", fontSize: "18px" }}>24Jam</span>
+                    </div>
                 </h1>
             </div>
             <div className="overflow-y-auto">
