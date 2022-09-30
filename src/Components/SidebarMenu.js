@@ -1,15 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { faChevronLeft, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './Sidebar.css';
 import Logo from "./logo.svg";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/Auth";
 
 const SidebarMenu = () => {
     const [open, setOpen] = useState(true);
+    const { user, setUser } = useAuth();
+    const navigate = useNavigate();
+
+    const logout = useCallback(
+        (e) => {
+            e.preventDefault();
+            setUser(null);
+            navigate("/login");
+        },
+        [setUser]
+    );
     return (
         <div
             className={` ${open ? "w-72" : "w-20 "
-                } h-auto p-5 pt-1.5 bg-[#11133E] relative duration-300`}
+                } h-full p-5 pt-1.5 bg-[#11133E] relative duration-300`}
         >
             <button className={`bg-[#282B51] focus:ring-white focus:ring-1 ring-1 ring-white outline-grey hover:bg-[#1DBDED] px-1.5 text-center inline-flex items-center dark:focus:ring-[#1DBDED]/55 absolute cursor-pointer -right-3 top-6 w-6 h-6 rounded-full ${!open && "rotate-180"}`}
                 onClick={() => setOpen(!open)} >
@@ -19,7 +32,7 @@ const SidebarMenu = () => {
             <div className="flex gap-x-4 items-center">
                 <img
                     src={Logo}
-                    className={`cursor-pointer duration-500 w-50 h-14 sm:h-9 sm:w-9 ${open && "rotate-[360deg]"
+                    className={`cursor-pointer duration-500 w-14 h-14 sm:h-9 sm:w-9 ${open && "rotate-[360deg]"
                         }`}
                 />
                 <h1
@@ -27,12 +40,12 @@ const SidebarMenu = () => {
                         }`}
                 >
                     <div className="break-normal">
-                        <span style={{ color: "#1DBDED", fontWeight: "bold", fontSize: "18px", textAlign: "left", paddingBottomg: "-10px" }}>System</span>
-                        <span style={{ color: "#FDFDFE", fontWeight: "bold", fontSize: "18px" }}>Top</span>
+                        <span className="w-5 sm:w-3" style={{ color: "#1DBDED", fontWeight: "bold" }}>System</span>
+                        <span className="w-5 sm:w-3" style={{ color: "#FDFDFE", fontWeight: "bold" }}>Top</span>
                     </div>
                     <div className="break-normal">
-                        <span style={{ color: "#1DBDED", fontWeight: "bold", fontSize: "18px" }}>Up</span>
-                        <span style={{ color: "#FDFDFE", fontWeight: "bold", fontSize: "18px" }}>24Jam</span>
+                        <span className="w-5 sm:w-3" style={{ color: "#1DBDED", fontWeight: "bold" }}>Up</span>
+                        <span className="w-5 sm:w-3" style={{ color: "#FDFDFE", fontWeight: "bold" }}>24Jam</span>
                     </div>
                 </h1>
             </div>
@@ -149,7 +162,7 @@ const SidebarMenu = () => {
                 </ul>
                 <ul className="pt-4 mt-16 space-y-2 border-t border-gray-200 bottom-0 relative dark:border-gray-700">
                     <li>
-                        <a href="#" className="flex items-center p-2 text-base font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group">
+                        <a href="/login" className="flex items-center p-2 text-base font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group" onClick={logout}>
                             <svg viewBox="0 0 19 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0 w-6 h-6 text-[#F3F9FE] transition duration-75 dark:text-gray-400 group-hover:text-[#223E92] dark:group-hover:text-white">
                                 <path d="M12 17.4C12.3313 17.4 12.6 17.1313 12.6 16.8C12.6 16.4687 12.3313 16.2 12 16.2H4.19998C2.87449 16.2 1.79998 15.1255 1.79998 13.8V4.20001C1.79998 2.87452 2.87449 1.80001 4.19998 1.80001H12C12.3313 1.80001 12.6 1.53137 12.6 1.20001C12.6 0.868638 12.3313 0.600006 12 0.600006H4.19998C2.21176 0.600006 0.599976 2.21179 0.599976 4.20001V13.8C0.599976 15.7883 2.21176 17.4 4.19998 17.4H12ZM13.3757 4.37575C13.61 4.14142 13.9899 4.14142 14.2243 4.37575L18.4243 8.57575C18.6585 8.81006 18.6585 9.18997 18.4243 9.42432L14.2243 13.6243C13.9899 13.8586 13.61 13.8586 13.3757 13.6243C13.1414 13.39 13.1414 13.01 13.3757 12.7757L16.5515 9.60001H5.99998C5.66861 9.60001 5.39998 9.33133 5.39998 9.00001C5.39998 8.66864 5.66861 8.40001 5.99998 8.40001H16.5515L13.3757 5.22427C13.1414 4.98995 13.1414 4.61006 13.3757 4.37575Z" />
                             </svg>

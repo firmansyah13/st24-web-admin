@@ -67,25 +67,25 @@ const NavMenu = () => {
                                     </div>
                                 </div> */}
                             </div>
-                            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                                <div>
-                                    <div className=" w-16 mr-2 ml-2 sm:w-96" style={{ marginTop: "-20px" }}>
+                            <div className="absolute inset-y-0 right-0 flex items-center mt-2 sm:static sm:inset-auto sm:ml-24 sm:pr-0">
+                                <div className="mr-2 w-24 sm:w-96" style={{ marginTop: "-30px" }}>
+                                    <div className="ml-24">
                                         <Label
-                                            htmlFor="email4"
-                                            value="Your email"
+                                            htmlFor="search"
+                                            value="Search"
                                         />
                                     </div>
                                     <TextInput
-                                        id="email4"
-                                        type="email"
-                                        placeholder="name@flowbite.com"
+                                        id="search"
+                                        type="text"
+                                        placeholder="Cari..."
                                         required={true}
                                         icon={HiOutlineSearch}
                                     />
                                 </div>
                                 <button
                                     type="button"
-                                    className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                                    className="p-1 text-gray-400 hover:text-white focus:outline-none focus:rounded-full focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                                 >
                                     <span className="sr-only">View notifications</span>
                                     <HiOutlineBell className="h-6 w-6" aria-hidden="true" />
