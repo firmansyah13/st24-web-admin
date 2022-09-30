@@ -1,10 +1,7 @@
-// import React, { useState } from "react";
 import { HiOutlineLockClosed } from "react-icons/hi";
 import React, { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../src/context/Auth";
-// import Logo from "./logo.png";
-// const logo = require('./logo.png);
 
 const Login = () => {
     const [username, setUsername] = useState("");
@@ -16,7 +13,7 @@ const Login = () => {
         (e) => {
             e.preventDefault();
             setUser({ username, password });
-            navigate("/");
+            navigate("/dashboard");
         },
         [setUser, username, password]
     );
