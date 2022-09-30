@@ -15,7 +15,7 @@ const SidebarMenu = () => {
         (e) => {
             e.preventDefault();
             setUser(null);
-            navigate("/login");
+            navigate("/");
         },
         [setUser]
     );
