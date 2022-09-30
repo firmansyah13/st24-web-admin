@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { Fragment } from "react";
 import { Label, TextInput } from "flowbite-react";
 import { Transition, Disclosure, Menu } from "@headlessui/react";
 import { HiOutlineSearch, HiOutlineBell } from "react-icons/hi";
@@ -14,9 +14,7 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-
 const NavMenu = () => {
-    const [isOpen, setIsOpen] = useState(false);
     return (
         <Disclosure as="nav" className="bg-[#11133E]">
             {({ open }) => (

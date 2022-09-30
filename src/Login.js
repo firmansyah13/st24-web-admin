@@ -13,7 +13,7 @@ const Login = () => {
         (e) => {
             e.preventDefault();
             setUser({ username, password });
-            navigate("/dashboard");
+            navigate("/");
         },
         [setUser, username, password]
     );
