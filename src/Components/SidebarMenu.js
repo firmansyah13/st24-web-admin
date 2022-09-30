@@ -3,22 +3,28 @@ import { faChevronLeft, faChevronDown } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './Sidebar.css';
 import Logo from "./logo.svg";
-import { useNavigate } from "react-router-dom";
+import { redirect } from "react-router-dom";
 import { useAuth } from "../context/Auth";
+
+
 
 const SidebarMenu = () => {
     const [open, setOpen] = useState(true);
     const { user, setUser } = useAuth();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const logout = useCallback(
         (e) => {
             e.preventDefault();
             setUser(null);
-            navigate("/");
+            // navigate("/");
+            if(!user){
+                return redirect("/login")
+            }
         },
         [setUser]
     );
+
     return (
         <div
             className={` ${open ? "w-72" : "w-20 "
