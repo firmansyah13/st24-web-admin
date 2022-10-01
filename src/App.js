@@ -2,20 +2,20 @@ import React from 'react';
 import './App.css';
 import Dashboard from './Dashboard';
 import LoginPage from './Login';
+import Toko from './Toko';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AuthProvider, RequireAuth } from "./context/Auth";
+import { AuthProvider } from "./context/Auth";
 
 const App = () => {
   return (
     <AuthProvider>
-      {/* <BrowserRouter> */}
+      <BrowserRouter>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
-          <Route element={<RequireAuth />}>
-            <Route path="/" element={<Dashboard />} />
-          </Route>
+          <Route path="/" element={<Dashboard />} />
+          <Route path='/toko' element={<Toko />} />
         </Routes>
-      {/* </BrowserRouter> */}
+      </BrowserRouter>
     </AuthProvider>
   );
 };
