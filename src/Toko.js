@@ -284,13 +284,13 @@ const Toko = () => {
             <Sidebar />
             <div className="h-full flex-1">
                 <NavMenu />
-                <div className="container mx-auto px-4 overscroll-auto">
+                <div className="container mx-auto px-4">
                     <h1 className="text-2xl font-semibold text-left mb-2">Toko Management</h1>
                     <div className="min-h-screen text-gray-900">
-                        <main className="w-full mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+                        <main className="w-full sm:px-6 lg:px-8 pt-4">
                             {/* <div className="">
                             </div> */}
-                            <div className="mt-6">
+                            <div className="">
                                 <Table columns={columns} data={data} />
                             </div>
                         </main>
