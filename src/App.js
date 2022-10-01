@@ -9,8 +9,8 @@ import { AuthProvider, RequireAuth } from "./context/Auth";
 
 const App = () => {
   return (
-    // <AuthProvider>
-      // <BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           {/* <Route element={<RequireAuth />}> */}
@@ -18,8 +18,8 @@ const App = () => {
             <Route path='/toko' element={<Toko />} />
           {/* </Route> */}
         </Routes>
-      // </BrowserRouter> 
-    // </AuthProvider >
+      </BrowserRouter> 
+    </AuthProvider >
   );
 };
 
