@@ -275,7 +275,7 @@ function Table({ columns, data }) {
                                 </thead>
                                 <tbody
                                     {...getTableBodyProps()}
-                                    className="bg-white divide-y divide-gray-200 text-center"
+                                    className="bg-white divide-y divide-gray-200 text-center overflow-y-scroll"
                                 >
                                     {page.map((row, i) => {  // new
                                         prepareRow(row)

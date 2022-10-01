@@ -15,15 +15,15 @@ const SidebarMenu = () => {
         (e) => {
             e.preventDefault();
             setUser(null);
-            navigate("/");
+            navigate("/login");
         },
-        [setUser]
+        // [setUser]
     );
 
     return (
         <div
             className={` ${open ? "w-72" : "w-20 "
-                } h-full p-5 pt-1.5 bg-[#11133E] relative duration-300`}
+                } h-auto p-5 pt-1.5 bg-[#11133E] relative duration-300`}
         >
             <button className={`bg-[#282B51] focus:ring-white focus:ring-1 ring-1 ring-white outline-grey hover:bg-[#1DBDED] px-1.5 text-center inline-flex items-center dark:focus:ring-[#1DBDED]/55 absolute cursor-pointer -right-3 top-6 w-6 h-6 rounded-full ${!open && "rotate-180"}`}
                 onClick={() => setOpen(!open)} >

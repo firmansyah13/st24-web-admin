@@ -4,7 +4,8 @@ import Dashboard from './Dashboard';
 import LoginPage from './Login';
 import Toko from './Toko';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AuthProvider } from "./context/Auth";
+import { AuthProvider, RequireAuth } from "./context/Auth";
+
 
 const App = () => {
   return (
@@ -12,11 +13,13 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/" element={<Dashboard />} />
-          <Route path='/toko' element={<Toko />} />
+          {/* <Route element={<RequireAuth />}> */}
+            <Route path="/" element={<Dashboard />} />
+            <Route path='/toko' element={<Toko />} />
+          {/* </Route> */}
         </Routes>
       </BrowserRouter>
-    </AuthProvider>
+    </AuthProvider >
   );
 };
 
