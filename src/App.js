@@ -18,7 +18,7 @@ const App = () => {
             <Route path='/toko' element={<Toko />} />
           {/* </Route> */}
         </Routes>
-      {/* </BrowserRouter> */}
+      // </BrowserRouter> 
     // </AuthProvider >
   );
 };
