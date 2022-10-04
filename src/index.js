@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "@fontsource/rubik";
-import "futura-font";
+// import "futura-font";
 // import { BrowserRouter } from 'react-router-dom';
 
 const rootElement = document.getElementById('root');

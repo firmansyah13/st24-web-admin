@@ -40,7 +40,7 @@ const SidebarMenu = () => {
             !open && "scale-0"
           }`}
         >
-          <div className="w-72" style={{ fontFamily: "FuturaBT-Medium" }}>
+          <div className="w-72">
             <span className="mr-3.5 text-white font-2xl font-bold">S</span>
             <span className="mr-3.5 text-white font-2xl font-bold">T</span>
             <span className="mr-3.5 text-white font-2xl font-bold">-</span>
@@ -129,7 +129,7 @@ const SidebarMenu = () => {
           </li>
           <li>
             <a
-              href="#"
+              href="/report"
               className="flex items-center p-2 text-base font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
             >
               <svg

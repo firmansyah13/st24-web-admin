@@ -399,10 +399,7 @@ const Toko = () => {
         Header: "Active",
         // accessor: "berat",
         Cell: row => {
-          return (
-            <div style={{ 'text-align': 'center' }}>
-              <input type="checkbox" />
-            </div>)
+          return (<input type="checkbox" />)
         }
       },
       {
@@ -436,7 +433,7 @@ const Toko = () => {
       <Sidebar />
       <div className="h-full flex-1">
         <NavMenu />
-        <div className="container  px-4">
+        <div className="container px-4">
           <h1 className="text-2xl font-semibold text-left ml-4 mt-2 mb-2">
             Toko Management
           </h1>

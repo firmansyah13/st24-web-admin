@@ -3,6 +3,7 @@ import Login from "./Pages/Login";
 import Dashboard from "./Pages/Dashboard";
 import Toko from "./Pages/Toko";
 import Produk from "./Pages/Produk";
+import Report from "./Pages/Report";
 import {
   BrowserRouter,
   Route,
@@ -20,6 +21,7 @@ export default function RouterApp() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/toko" element={<Toko />} />
             <Route path="/produk" element={<Produk />} />
+            <Route path="/report" element={<Report />} />
         </Routes>
       </BrowserRouter>
   );
