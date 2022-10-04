@@ -1,26 +1,14 @@
-import React from 'react';
-import './App.css';
-import Dashboard from './Dashboard';
-import LoginPage from './Login';
-import Toko from './Toko';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AuthProvider, RequireAuth } from "./context/Auth";
+import "./App.css";
+import RouterApp from "./Router";
+import SuperProvider from "./context";
+import { BrowserRouter } from "react-router-dom";
 
-
-const App = () => {
+export default function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/login" element={<LoginPage />} />
-          {/* <Route element={<RequireAuth />}> */}
-            <Route path="/" element={<Dashboard />} />
-            <Route path='/toko' element={<Toko />} />
-          {/* </Route> */}
-        </Routes>
-      </BrowserRouter> 
-    </AuthProvider >
+    <div className="App">
+      <SuperProvider>
+          <RouterApp />
+      </SuperProvider>
+    </div>
   );
-};
-
-export default App;
+}
