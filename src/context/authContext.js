@@ -32,17 +32,6 @@ const AuthProvider = ({ children }) => {
   );
 };
 
-// const AuthProvider = (props) => {
-//   const { children } = props;
-//   const auth = useAuth();
-
-//   return (
-//     <AuthContext.Provider value={auth} {...props}>
-//       {children}
-//     </AuthContext.Provider>
-//   );
-// };
-
 const RequireAuth = () => {
   const { user } = useAuth();
   const location = useLocation();

@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useTable, useFilters, useGlobalFilter, useAsyncDebounce, useSortBy, usePagination } from 'react-table'
 import { Button, PageButton } from '../Shared/Button';
 import { classNames } from '../Shared/Utils';
@@ -141,7 +141,7 @@ function Table({ columns, data }) {
         usePagination,  // new
     )
 
-    const [showModal, setShowModal] = React.useState(false);
+    const [showModal, setShowModal] = useState(false);
     // Render the UI for your table
     return (
         <>

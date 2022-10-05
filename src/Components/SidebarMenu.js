@@ -20,9 +20,8 @@ const SidebarMenu = () => {
       } p-5 pt-2.5 bg-[#11133E] relative duration-300`}
     >
       <button
-        className={`bg-[#282B51] focus:ring-white focus:ring-1 ring-1 ring-white outline-grey hover:bg-[#1DBDED] px-1.5 text-center inline-flex items-center dark:focus:ring-[#1DBDED]/55 absolute cursor-pointer -right-3 top-5 w-6 h-6 rounded-full ${
-          !open && "rotate-180"
-        }`}
+        className={`bg-[#282B51] focus:ring-white focus:ring-1 ring-1 ring-white outline-grey hover:bg-[#1DBDED] px-1.5 text-center inline-flex items-center dark:focus:ring-[#1DBDED]/55 absolute cursor-pointer -right-3 top-5 w-6 h-6 rounded-full ${!open && "rotate-180"
+          }`}
         onClick={() => setOpen(!open)}
       >
         <FontAwesomeIcon icon={faChevronLeft} style={{ color: "#FDFDFE" }} />
@@ -31,14 +30,12 @@ const SidebarMenu = () => {
       <div className="flex gap-x-4 items-center">
         <img
           src={Logo}
-          className={`cursor-pointer duration-500 w-14 h-14 sm:h-9 sm:w-9 ${
-            open && "rotate-[360deg]"
-          }`}
+          className={`cursor-pointer duration-500 w-14 h-14 sm:h-9 sm:w-9 ${open && "rotate-[360deg]"
+            }`}
         />
         <h1
-          className={`text-black text-left font-medium text-xl duration-200 w-72 ${
-            !open && "scale-0"
-          }`}
+          className={`text-black text-left font-medium text-xl duration-200 w-72 ${!open && "scale-0"
+            }`}
         >
           <div className="w-72">
             <span className="mr-3.5 text-white font-2xl font-bold">S</span>

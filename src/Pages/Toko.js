@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import Table, { AvatarCell } from "./TokoTable";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
@@ -11,8 +11,8 @@ function classNames(...classes) {
 }
 
 const DropdownComponent = () => {
-  const [showModalEdit, setShowModalEdit] = React.useState(false);
-  const [showModalDelete, setShowModalDelete] = React.useState(false);
+  const [showModalEdit, setShowModalEdit] = useState(false);
+  const [showModalDelete, setShowModalDelete] = useState(false);
   return (
     <>
       <Menu as="div" className="relative inline-block text-left">

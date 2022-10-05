@@ -1,18 +1,20 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import Table, { AvatarCell } from "./ProdukTable";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavMenu from "../Components/NavMenu";
 import Sidebar from "../Components/SidebarMenu";
+import { Modal, Button } from "flowbite";
+import { HiOutlineExclamationCircle } from "react-icons/hi";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 const DropdownComponent = () => {
-  const [showModalEdit, setShowModalEdit] = React.useState(false);
-  const [showModalDelete, setShowModalDelete] = React.useState(false);
+  const [showModalEdit, setShowModalEdit] = useState(false);
+  const [showModalDelete, setShowModalDelete] = useState(false);
   return (
     <>
       <Menu as="div" className="relative inline-block text-left">

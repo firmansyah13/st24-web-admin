@@ -10,8 +10,8 @@ const Dashboard = () => {
         <NavMenu />
         <div className="container px-4">
           <h1 className="text-2xl font-semibold text-left mt-2 mb-2">Dashboard</h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-4 gap-4">
-            <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-5 gap-2">
+            {/* <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
               <div className="flex justify-center items-center w-14 h-14 bg-white rounded-full transition-all duration-300 transform group-hover:rotate-12">
                 <svg
                   width="30"
@@ -33,7 +33,7 @@ const Dashboard = () => {
                 <p>Jumlah Produk</p>
               </div>
               <div className="text-right"></div>
-            </div>
+            </div> */}
             <div className="bg-green-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-green-600 dark:border-gray-600 text-white font-medium group">
               <div className="flex justify-center items-center w-14 h-14 bg-white rounded-full transition-all duration-300 transform group-hover:rotate-12">
                 <svg
