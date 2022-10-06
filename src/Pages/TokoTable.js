@@ -168,7 +168,7 @@ function Table({ columns, data }) {
                     </button>
                     {showModal ? (
                         <>
-                            <div class="flex mt-12 py-12 w-auto overflow-x-hidden overflow-y-auto z-10 fixed top-0 right-0 bottom-0 left-0 outline-none focus:outline-none w-full md:inset-0 h-modal md:h-full">
+                            <div class="flex mt-12 py-12 w-auto z-10 fixed top-0 right-0 bottom-0 left-0 outline-none focus:outline-none w-full md:inset-0 h-modal md:h-full">
                                 <div role="alert" className="container mx-auto w-11/12 md:w-2/3 max-w-lg">
                                     <div className="relative py-8 px-5 md:px-10 bg-white shadow-md rounded border border-gray-400">
                                         <div className="w-full flex justify-start text-gray-600 mb-3">
@@ -241,7 +241,7 @@ function Table({ columns, data }) {
             {/* table */}
             <div className="mt-11 flex flex-col" style={{ height: "550px" }}>
                 <div className="-my-2 overflow-x-auto -mx-4 sm:-mx-6 lg:-mx-8">
-                    <div className="py-2 align-middle inline-block min-w-screen sm:px-4 lg:px-4">
+                    <div className="align-middle inline-block max-w-screen sm:px-4 lg:px-4">
                         <div className="shadow overflow-auto border-b border-gray-200 sm:rounded-lg">
                             <table {...getTableProps()} className="min-w-full divide-y divide-gray-200">
                                 <thead className="bg-gray-50">

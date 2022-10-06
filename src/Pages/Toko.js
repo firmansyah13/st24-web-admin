@@ -433,11 +433,11 @@ const Toko = () => {
       <Sidebar />
       <div className="h-full flex-1">
         <NavMenu />
-        <div className="container px-4">
+        <div className="container px-2">
           <h1 className="text-2xl font-semibold text-left ml-4 mt-2 mb-2">
             Toko Management
           </h1>
-          <div className="min-h-screen text-gray-900">
+          <div className="max-h-screen text-gray-900">
             <main className="w-full sm:px-4 lg:px-8 pt-2">
               <div className="">
                 <Table columns={columns} data={data} />

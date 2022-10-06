@@ -16,11 +16,11 @@ const SidebarMenu = () => {
   return (
     <div
       className={` ${
-        open ? "w-72" : "w-20 "
+        open ? "w-56" : "w-20 "
       } p-5 pt-2.5 bg-[#11133E] relative duration-300`}
     >
       <button
-        className={`bg-[#282B51] focus:ring-white focus:ring-1 ring-1 ring-white outline-grey hover:bg-[#1DBDED] px-1.5 text-center inline-flex items-center dark:focus:ring-[#1DBDED]/55 absolute cursor-pointer -right-3 top-5 w-6 h-6 rounded-full ${!open && "rotate-180"
+        className={`bg-[#282B51] focus:ring-white focus:ring-1 ring-1 ring-white outline-grey hover:bg-[#1DBDED] px-1.5 text-center inline-flex items-center dark:focus:ring-[#1DBDED]/55 absolute cursor-pointer -right-6 top-5 w-6 h-6 rounded-full ${!open && "rotate-180"
           }`}
         onClick={() => setOpen(!open)}
       >
@@ -34,10 +34,10 @@ const SidebarMenu = () => {
             }`}
         />
         <h1
-          className={`text-black text-left font-medium text-xl duration-200 w-72 ${!open && "scale-0"
+          className={`text-black text-left font-medium text-xl duration-200 w-64 ${!open && "scale-0"
             }`}
         >
-          <div className="w-72">
+          <div className="w-64">
             <span className="mr-3.5 text-white font-2xl font-bold">S</span>
             <span className="mr-3.5 text-white font-2xl font-bold">T</span>
             <span className="mr-3.5 text-white font-2xl font-bold">-</span>
@@ -47,14 +47,6 @@ const SidebarMenu = () => {
           <div className="w-72 -mt-3">
             <span className="text-white text-xs">SystemTopUp24Jam</span>
           </div>
-          {/* <div className="break-normal">
-                        <span className="w-5 sm:w-3" style={{ color: "#1DBDED", fontWeight: "bold" }}>System</span>
-                        <span className="w-5 sm:w-3" style={{ color: "#FDFDFE", fontWeight: "bold" }}>Top</span>
-                    </div>
-                    <div className="break-normal">
-                        <span className="w-5 sm:w-3" style={{ color: "#1DBDED", fontWeight: "bold" }}>Up</span>
-                        <span className="w-5 sm:w-3" style={{ color: "#FDFDFE", fontWeight: "bold" }}>24Jam</span>
-                    </div> */}
         </h1>
       </div>
       <div className="overflow-y-auto">
@@ -62,7 +54,7 @@ const SidebarMenu = () => {
           <li>
             <a
               href="/"
-              className="flex items-center p-2 text-base font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] active:bg-[#F3F9FE] active:text-[#223E92] hover:line-clamp-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
+              className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] active:bg-[#F3F9FE] active:text-[#223E92] hover:line-clamp-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
             >
               <svg
                 viewBox="0 0 18 18"
@@ -78,7 +70,7 @@ const SidebarMenu = () => {
           <li>
             <a
               href="#"
-              className="flex items-center p-2 text-base font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
+              className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
             >
               <svg
                 viewBox="0 0 20 21"
@@ -94,7 +86,7 @@ const SidebarMenu = () => {
           <li>
             <a
               href="#"
-              className="flex items-center p-2 text-base font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
+              className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
             >
               <svg
                 viewBox="0 0 21 21"
@@ -110,7 +102,7 @@ const SidebarMenu = () => {
           <li>
             <a
               href="#"
-              className="flex items-center p-2 text-base font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
+              className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
             >
               <svg
                 viewBox="0 0 20 14"
@@ -127,7 +119,7 @@ const SidebarMenu = () => {
           <li>
             <a
               href="/report"
-              className="flex items-center p-2 text-base font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
+              className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
             >
               <svg
                 viewBox="0 0 16 20"
@@ -143,7 +135,7 @@ const SidebarMenu = () => {
           <li>
             <a
               href="#"
-              className="flex items-center p-2 text-base font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
+              className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
             >
               <svg
                 viewBox="0 0 20 20"
@@ -153,14 +145,14 @@ const SidebarMenu = () => {
               >
                 <path d="M10 0C15.523 0 20 4.478 20 10C20 15.522 15.523 20 10 20C4.477 20 0 15.522 0 10C0 4.478 4.477 0 10 0ZM10 1.667C5.405 1.667 1.667 5.405 1.667 10C1.667 14.595 5.405 18.333 10 18.333C14.595 18.333 18.333 14.595 18.333 10C18.333 5.405 14.595 1.667 10 1.667ZM9.25 4C9.6295 4 9.9435 4.28233 9.9931 4.64827L10 4.75V10H13.25C13.664 10 14 10.336 14 10.75C14 11.1295 13.7177 11.4435 13.3517 11.4931L13.25 11.5H9.25C8.8705 11.5 8.5565 11.2177 8.5069 10.8517L8.5 10.75V4.75C8.5 4.336 8.836 4 9.25 4Z" />
               </svg>
-              <span className="ml-3 mr-28">&nbsp;History</span>
+              <span className="ml-3 mr-14">&nbsp;History</span>
               <FontAwesomeIcon icon={faChevronDown} />
             </a>
           </li>
           <li>
             <a
               href="#"
-              className="flex items-center p-2 text-base font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
+              className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
             >
               <svg
                 viewBox="0 0 20 20"
@@ -170,7 +162,7 @@ const SidebarMenu = () => {
               >
                 <path d="M10.0127 0.25C10.7466 0.25846 11.4777 0.34326 12.1942 0.50304C12.5069 0.57279 12.7408 0.83351 12.7763 1.15196L12.9465 2.67881C13.0235 3.37986 13.6155 3.91084 14.3211 3.91158C14.5108 3.91188 14.6984 3.87238 14.8737 3.79483L16.2743 3.17956C16.5656 3.05159 16.906 3.12136 17.1234 3.35362C18.1356 4.43464 18.8894 5.73115 19.3282 7.14558C19.4228 7.45058 19.3139 7.78203 19.0568 7.9715L17.8154 8.8866C17.4612 9.1468 17.2521 9.56 17.2521 9.9995C17.2521 10.4389 17.4612 10.8521 17.8161 11.1129L19.0587 12.0283C19.3158 12.2177 19.4248 12.5492 19.3302 12.8543C18.8916 14.2685 18.1382 15.5649 17.1266 16.6461C16.9093 16.8783 16.5693 16.9483 16.278 16.8206L14.8716 16.2045C14.4693 16.0284 14.0072 16.0542 13.627 16.274C13.2468 16.4937 12.9938 16.8812 12.9454 17.3177L12.7764 18.8444C12.7415 19.1592 12.5126 19.4182 12.2045 19.4915C10.7561 19.8361 9.247 19.8361 7.79852 19.4915C7.49039 19.4182 7.26153 19.1592 7.22667 18.8444L7.05785 17.32C7.00826 16.8843 6.75483 16.498 6.37491 16.279C5.995 16.06 5.53369 16.0343 5.13269 16.2094L3.72606 16.8256C3.43471 16.9533 3.09452 16.8833 2.87727 16.6509C1.86511 15.5685 1.11168 14.2705 0.673691 12.8548C0.579351 12.5499 0.68835 12.2186 0.94533 12.0293L2.18867 11.1133C2.54281 10.8531 2.75196 10.4399 2.75196 10.0005C2.75196 9.561 2.54281 9.1478 2.1882 8.8873L0.945651 7.97285C0.688281 7.78345 0.579181 7.45178 0.673861 7.14658C1.11261 5.73215 1.86643 4.43564 2.87861 3.35462C3.09608 3.12236 3.43643 3.05259 3.72773 3.18056L5.12811 3.79572C5.53105 3.97256 5.99429 3.94585 6.37626 3.72269C6.75658 3.50209 7.00977 3.11422 7.05866 2.67764L7.22873 1.15196C7.26425 0.83335 7.49835 0.57254 7.81129 0.50294C8.5286 0.34342 9.2604 0.25865 10.0127 0.25ZM10.0128 1.7499C9.5588 1.75524 9.106 1.79443 8.6583 1.86702L8.5494 2.84418C8.4476 3.75368 7.92052 4.56102 7.13091 5.01903C6.33646 5.48317 5.36785 5.53903 4.52507 5.16917L3.62678 4.77456C3.05485 5.46873 2.59963 6.25135 2.27901 7.09168L3.07681 7.67879C3.81562 8.2216 4.25196 9.0837 4.25196 10.0005C4.25196 10.9172 3.81562 11.7793 3.07759 12.3215L2.27853 12.9102C2.59887 13.752 3.05417 14.5361 3.62649 15.2316L4.53162 14.8351C5.36971 14.4692 6.33173 14.5227 7.12402 14.9794C7.9163 15.4361 8.4448 16.2417 8.5485 17.1526L8.6574 18.1365C9.5471 18.2878 10.4559 18.2878 11.3456 18.1365L11.4545 17.1527C11.5553 16.2421 12.0832 15.4337 12.8765 14.9753C13.6697 14.5168 14.6337 14.463 15.4733 14.8305L16.3777 15.2267C16.9495 14.5323 17.4046 13.7495 17.7252 12.909L16.9272 12.3211C16.1884 11.7783 15.7521 10.9162 15.7521 9.9995C15.7521 9.0827 16.1884 8.2206 16.9263 7.67847L17.7232 7.09109C17.4026 6.25061 16.9473 5.46784 16.3753 4.77356L15.4788 5.16737C15.1134 5.32901 14.7183 5.4122 14.3192 5.41158C12.8495 5.41004 11.616 4.30355 11.4556 2.84383L11.3467 1.8667C10.9012 1.7942 10.4531 1.75512 10.0128 1.7499ZM10.0002 6.24995C12.0713 6.24995 13.7502 7.92888 13.7502 10C13.7502 12.071 12.0713 13.75 10.0002 13.75C7.92912 13.75 6.25018 12.071 6.25018 10C6.25018 7.92888 7.92912 6.24995 10.0002 6.24995ZM10.0002 7.74995C8.7575 7.74995 7.75018 8.7573 7.75018 10C7.75018 11.2426 8.7575 12.25 10.0002 12.25C11.2428 12.25 12.2502 11.2426 12.2502 10C12.2502 8.7573 11.2428 7.74995 10.0002 7.74995Z" />
               </svg>
-              <span className="ml-3 mr-28">&nbsp;Setting</span>
+              <span className="ml-3 mr-14">&nbsp;Setting</span>
               <FontAwesomeIcon icon={faChevronDown} />
             </a>
           </li>
@@ -179,7 +171,7 @@ const SidebarMenu = () => {
           <li>
             <a
               href="#"
-              className="flex items-center p-2 text-base font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
+              className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
             >
               <svg
                 viewBox="0 0 21 20"
@@ -189,7 +181,7 @@ const SidebarMenu = () => {
               >
                 <path d="M3.5 4C3.5 2.61929 4.61929 1.5 6 1.5C7.38071 1.5 8.5 2.61929 8.5 4C8.5 5.38071 7.38071 6.5 6 6.5C4.61929 6.5 3.5 5.38071 3.5 4ZM6 0C3.79086 0 2 1.79086 2 4C2 6.20914 3.79086 8 6 8C8.2091 8 10 6.20914 10 4C10 1.79086 8.2091 0 6 0ZM13.5 5C13.5 4.17157 14.1716 3.5 15 3.5C15.8284 3.5 16.5 4.17157 16.5 5C16.5 5.82843 15.8284 6.5 15 6.5C14.1716 6.5 13.5 5.82843 13.5 5ZM15 2C13.3431 2 12 3.34315 12 5C12 6.65685 13.3431 8 15 8C16.6569 8 18 6.65685 18 5C18 3.34315 16.6569 2 15 2ZM2.25 10C1.00736 10 0 11.0074 0 12.25V12.5011V12.5022L1.00136e-05 12.5048L7.00951e-05 12.5111L0.000349998 12.5277C0.000639998 12.5406 0.00116999 12.5571 0.00209999 12.5771C0.00395999 12.6169 0.00744991 12.6705 0.0139799 12.7358C0.0270099 12.8661 0.05233 13.045 0.10165 13.2564C0.19995 13.6776 0.39654 14.2404 0.79183 14.8051C1.61066 15.9749 3.17178 17 6 17C7.36897 17 8.4411 16.7598 9.2758 16.3793C9.1268 15.8851 9.035 15.366 9.0082 14.8299C8.3633 15.2108 7.41267 15.5 6 15.5C3.57822 15.5 2.51434 14.6501 2.02067 13.9449C1.75971 13.5721 1.62818 13.1974 1.56241 12.9155C1.5297 12.7753 1.514 12.6612 1.50653 12.5865C1.50281 12.5493 1.50117 12.5222 1.50047 12.5072L1.5 12.4947V12.25C1.5 11.8358 1.83579 11.5 2.25 11.5H9.7322C9.9807 11.0233 10.2865 10.5813 10.6405 10.1831C10.3674 10.0653 10.0663 10 9.75 10H2.25ZM12.2772 10.9759C12.592 12.0661 11.9376 13.1995 10.836 13.4721L10.2518 13.6166C10.2069 13.9043 10.1836 14.1995 10.1836 14.5003C10.1836 14.815 10.2091 15.1235 10.2582 15.4237L10.7976 15.5536C11.9102 15.8216 12.5715 16.9666 12.2476 18.0641L12.0613 18.6954C12.5005 19.081 13.0009 19.3942 13.5455 19.6169L14.0388 19.0982C14.8273 18.269 16.1496 18.2692 16.9379 19.0987L17.4366 19.6235C17.9801 19.4032 18.4801 19.093 18.9194 18.7106L18.7214 18.0247C18.4066 16.9344 19.061 15.801 20.1626 15.5285L20.7463 15.384C20.7912 15.0963 20.8145 14.8011 20.8145 14.5003C20.8145 14.1856 20.789 13.877 20.7399 13.5767L20.2009 13.4469C19.0884 13.179 18.4271 12.034 18.751 10.9364L18.9371 10.3056C18.498 9.9198 17.9975 9.6066 17.4529 9.3838L16.9598 9.9023C16.1713 10.7316 14.849 10.7313 14.0607 9.9018L13.5619 9.377C13.0184 9.5972 12.5184 9.9073 12.0791 10.2897L12.2772 10.9759ZM15.4991 16.0003C14.6984 16.0003 14.0494 15.3287 14.0494 14.5003C14.0494 13.6719 14.6984 13.0003 15.4991 13.0003C16.2997 13.0003 16.9487 13.6719 16.9487 14.5003C16.9487 15.3287 16.2997 16.0003 15.4991 16.0003Z" />
               </svg>
-              <span className="ml-4 mr-16">Management</span>
+              <span className="ml-4 mr-3">Management</span>
               <svg
                 viewBox="0 0 20 20"
                 fill="currentColor"
@@ -204,7 +196,7 @@ const SidebarMenu = () => {
           <li>
             <a
               href="#"
-              className="flex items-center p-2 text-base font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
+              className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -224,7 +216,7 @@ const SidebarMenu = () => {
           <li>
             <a
               href="/toko"
-              className="flex items-center p-2 text-base font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
+              className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -244,7 +236,7 @@ const SidebarMenu = () => {
           <li>
             <a
               href="/produk"
-              className="flex items-center p-2 text-base font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
+              className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -264,7 +256,7 @@ const SidebarMenu = () => {
           <li>
             <a
               href="#"
-              className="flex items-center p-2 text-base font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
+              className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -286,7 +278,7 @@ const SidebarMenu = () => {
           <li>
             <a
               href="/login"
-              className="flex items-center p-2 text-base font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
+              className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
               onClick={auth.logout}
             >
               <svg
