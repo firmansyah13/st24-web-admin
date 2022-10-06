@@ -1,11 +1,13 @@
-import { HiOutlineLockClosed } from "react-icons/hi";
+import { HiOutlineLockClosed, HiLockClosed } from "react-icons/hi";
 import React, {
   useState,
   useContext,
-  useEffect,
+  // useState,
   useCallback,
   useQuery,
 } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faKey } from "@fortawesome/free-solid-svg-icons";
 import { AuthContext } from "../context";
 import { redirect, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
@@ -41,7 +43,7 @@ const Login = () => {
     (e) => {
       e.preventDefault();
       setUser({ username, password });
-      if(setUser == auth.login){
+      if (setUser == auth.login) {
         navigate("/login");
       } else {
         navigate("/");
@@ -70,8 +72,14 @@ const Login = () => {
     auth.login(user);
   };
 
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
+  }
+
   return (
-    <div className="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="flex items-center justify-center py-12 mt-2 px-4 sm:mt-48 sm:px-6 lg:px-8">
       <div className="w-full max-w-md space-y-8">
         <div>
           <svg
@@ -197,21 +205,21 @@ const Login = () => {
                 placeholder="Type username..."
               />
             </div>
-            <div>
-              <label htmlFor="password" className="sr-only">
-                Password
-              </label>
+            <div className="h-6">
               <input
                 id="password"
                 name="password"
-                type="password"
+                type={showPassword ? "text" : "password"}
                 autoComplete="current-password"
+                placeholder="Password"
                 required
                 value={user.password}
                 onChange={(e) => handleChange(e, "password")}
-                className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                placeholder="Password"
+                className="relative w-full rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
               />
+              <button type="button" onClick={togglePassword} class="text-gray-500 relative bottom-9 focus:outline-none font-medium rounded-lg text-sm px-2 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style={{ marginLeft: "90%" }}>
+                <FontAwesomeIcon icon={faKey} />
+              </button>
             </div>
           </div>
 

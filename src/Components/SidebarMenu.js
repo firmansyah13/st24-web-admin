@@ -3,6 +3,7 @@ import {
   faChevronLeft,
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Sidebar.css";
 import Logo from "./logo.svg";
@@ -17,7 +18,7 @@ const SidebarMenu = () => {
     <div
       className={` ${
         open ? "w-56" : "w-20 "
-      } p-5 pt-2.5 bg-[#11133E] relative duration-300`}
+      } h-screen p-5 pt-2.5 bg-[#11133E] relative duration-300`}
     >
       <button
         className={`bg-[#282B51] focus:ring-white focus:ring-1 ring-1 ring-white outline-grey hover:bg-[#1DBDED] px-1.5 text-center inline-flex items-center dark:focus:ring-[#1DBDED]/55 absolute cursor-pointer -right-6 top-5 w-6 h-6 rounded-full ${!open && "rotate-180"
@@ -195,7 +196,7 @@ const SidebarMenu = () => {
           </li>
           <li>
             <a
-              href="#"
+              href="/user"
               className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
             >
               <svg
