@@ -8,7 +8,7 @@ const Dashboard = () => {
       <Sidebar />
       <div className="h-full flex-1">
         <NavMenu />
-        <div className="container px-4">
+        <div className="container-fluid px-2">
           <h1 className="text-2xl font-semibold text-left mt-2 mb-2">Dashboard</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-5 gap-2">
             <div className="bg-green-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-green-600 dark:border-gray-600 text-white font-medium group">

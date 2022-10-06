@@ -433,7 +433,7 @@ const Toko = () => {
       <Sidebar />
       <div className="h-full flex-1">
         <NavMenu />
-        <div className="container px-2">
+        <div className="container-fluid px-2">
           <h1 className="text-2xl font-semibold text-left ml-4 mt-2 mb-2">
             Toko Management
           </h1>
