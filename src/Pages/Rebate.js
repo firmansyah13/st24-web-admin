@@ -6,7 +6,7 @@ import { FaFolderOpen, FaFileExcel } from "react-icons/fa";
 
 const Rebate = () => {
     return (
-        <div className="flex">
+        <div className="flex sm:h-full">
             <Sidebar />
             <div className="h-full flex-1">
                 <NavMenu />

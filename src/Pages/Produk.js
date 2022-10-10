@@ -424,7 +424,7 @@ const Toko = () => {
   const data = React.useMemo(() => getData(), []);
 
   return (
-    <div className="flex">
+    <div className="flex sm:h-full">
       <Sidebar />
       <div className="h-full flex-1">
         <NavMenu />

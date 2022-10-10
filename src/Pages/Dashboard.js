@@ -4,11 +4,11 @@ import Sidebar from "../Components/SidebarMenu";
 
 const Dashboard = () => {
   return (
-    <div className="flex">
+    <div className="flex sm:h-full">
       <Sidebar />
       <div className="h-full flex-1">
         <NavMenu />
-        <div className="container-fluid bg-[#F8F8F8] px-2">
+        <div className="container-fluid bg-[#F8F8F8] max-h-screen px-2">
           <h1 className="text-2xl font-semibold text-left mt-2 mb-2">Dashboard</h1>
           <div className="w-full grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mb-8 gap-8">
             <div className="bg-[#F1FCF6] dark:bg-gray-800 rounded py-5 pl-6 flex items-start shadow">
