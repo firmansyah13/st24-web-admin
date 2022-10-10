@@ -1,48 +1,29 @@
-import { HiOutlineLockClosed, HiLockClosed } from "react-icons/hi";
+import { HiOutlineLockClosed } from "react-icons/hi";
 import React, {
   useState,
   useContext,
-  // useState,
   useCallback,
-  useQuery,
 } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faKey } from "@fortawesome/free-solid-svg-icons";
 import { AuthContext } from "../context";
-import { redirect, useNavigate } from "react-router-dom";
-import useAuth from "../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
+// import Spiner from "./Spinner";
+// import useAuth from "../hooks/useAuth";
 
 const Login = () => {
-  // const [username, setUsername] = useState("");
-  // const [password, setPassword] = useState("");
-  // const { setUser } = useAuth();
-  // const navigate = useNavigate();
-
+  
   const navigate = useNavigate();
   const auth = useContext(AuthContext);
-  // const [user, setUser] = useState({
-  //   username: "",
-  //   password: "",
-  // });
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  // const [ user, setUser] = useAuth();
   const [user, setUser] = useState({ setPassword, setUsername });
-  // const [user] = useQuery({password, username})
-
-
-
-  // );
-  // useEffect(() => {
-  //   if (password == "admin" && username == "admin") {
-  //     return redirect("/");
-  //   }
-  // }, [setUser, password, username]);
 
   const login = useCallback(
     (e) => {
       e.preventDefault();
       setUser({ username, password });
+      // <Spiner />
       if (setUser == auth.login) {
         navigate("/login");
       } else {
@@ -50,14 +31,6 @@ const Login = () => {
       }
     }, [setUser, password, username]
   );
-
-  //     if (auth.isLogin) {
-  //   (e) => {
-  //     navigate("/");
-  //   }
-  // },
-  // [setUser, auth.isLogin]
-  // );
 
   const handleChange = (e, type) => {
     e.persist();
@@ -217,7 +190,7 @@ const Login = () => {
                 onChange={(e) => handleChange(e, "password")}
                 className="relative w-full rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
               />
-              <button type="button" onClick={togglePassword} class="text-gray-500 relative bottom-9 focus:outline-none font-medium rounded-lg text-sm px-2 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style={{ marginLeft: "90%" }}>
+              <button type="button" onClick={togglePassword} className="text-gray-500 relative bottom-9 focus:outline-none font-medium rounded-lg text-sm px-2 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style={{ marginLeft: "90%" }}>
                 <FontAwesomeIcon icon={faKey} />
               </button>
             </div>
@@ -253,7 +226,6 @@ const Login = () => {
           <div>
             <button
               type="submit"
-              // onClick={handleLogin}
               className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
               <span className="absolute inset-y-0 left-0 flex items-center pl-3">

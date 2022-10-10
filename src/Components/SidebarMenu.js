@@ -3,11 +3,12 @@ import {
   faChevronLeft,
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
+import { FaClock } from "react-icons/fa";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Sidebar.css";
 import Logo from "./logo.svg";
-// import { useNavigate } from "react-router-dom";
+// import { Sidebar } from "flowbite-react";
 import { AuthContext } from "../context";
 
 const SidebarMenu = () => {
@@ -31,21 +32,19 @@ const SidebarMenu = () => {
       <div className="flex gap-x-4 items-center">
         <img
           src={Logo}
-          className={`cursor-pointer duration-500 w-14 h-14 sm:h-9 sm:w-9 ${open && "rotate-[360deg]"
-            }`}
+          className={`cursor-pointer duration-500 w-9 h-9 sm:h-9 sm:w-9 ${open && "rotate-[360deg]"}`}
         />
         <h1
-          className={`text-black text-left font-medium text-xl duration-200 w-64 ${!open && "scale-0"
-            }`}
+          className={`text-black text-left font-medium text-xl duration-200 w-64 ${!open && "scale-0"}`}
         >
-          <div className="w-64">
+          <div className="w-full sm:w-64">
             <span className="mr-3.5 text-white font-2xl font-bold">S</span>
             <span className="mr-3.5 text-white font-2xl font-bold">T</span>
             <span className="mr-3.5 text-white font-2xl font-bold">-</span>
             <span className="mr-3.5 text-white font-2xl font-bold">2</span>
             <span className="text-white font-2xl font-bold">4</span>
           </div>
-          <div className="w-72 -mt-3">
+          <div className="w-full sm:w-72 -mt-3">
             <span className="text-white text-xs">SystemTopUp24Jam</span>
           </div>
         </h1>
@@ -81,12 +80,12 @@ const SidebarMenu = () => {
               >
                 <path d="M10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C8.3817 20 6.81782 19.6146 5.41286 18.888L1.58704 19.9553C0.92212 20.141 0.23258 19.7525 0.04691 19.0876C-0.01454 18.8676 -0.0145099 18.6349 0.0469501 18.4151L1.11461 14.5922C0.38637 13.186 0 11.6203 0 10C0 4.47715 4.47715 0 10 0ZM10 1.5C5.30558 1.5 1.5 5.30558 1.5 10C1.5 11.4696 1.87277 12.8834 2.57303 14.1375L2.72368 14.4072L1.61096 18.3914L5.59755 17.2792L5.86709 17.4295C7.12006 18.1281 8.5322 18.5 10 18.5C14.6944 18.5 18.5 14.6944 18.5 10C18.5 5.30558 14.6944 1.5 10 1.5ZM6.75 11H11.2483C11.6625 11 11.9983 11.3358 11.9983 11.75C11.9983 12.1297 11.7161 12.4435 11.35 12.4932L11.2483 12.5H6.75C6.33579 12.5 6 12.1642 6 11.75C6 11.3703 6.28215 11.0565 6.64823 11.0068L6.75 11H11.2483H6.75ZM6.75 7.5H13.2545C13.6687 7.5 14.0045 7.83579 14.0045 8.25C14.0045 8.6297 13.7223 8.9435 13.3563 8.9932L13.2545 9H6.75C6.33579 9 6 8.6642 6 8.25C6 7.8703 6.28215 7.55651 6.64823 7.50685L6.75 7.5H13.2545H6.75Z" />
               </svg>
-              <span className="ml-3">&nbsp;Pesan</span>
+              <span className="ml-3">&nbsp;Broadcast</span>
             </a>
           </li>
           <li>
             <a
-              href="#"
+              href="/rebate"
               className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
             >
               <svg
@@ -146,13 +145,12 @@ const SidebarMenu = () => {
               >
                 <path d="M10 0C15.523 0 20 4.478 20 10C20 15.522 15.523 20 10 20C4.477 20 0 15.522 0 10C0 4.478 4.477 0 10 0ZM10 1.667C5.405 1.667 1.667 5.405 1.667 10C1.667 14.595 5.405 18.333 10 18.333C14.595 18.333 18.333 14.595 18.333 10C18.333 5.405 14.595 1.667 10 1.667ZM9.25 4C9.6295 4 9.9435 4.28233 9.9931 4.64827L10 4.75V10H13.25C13.664 10 14 10.336 14 10.75C14 11.1295 13.7177 11.4435 13.3517 11.4931L13.25 11.5H9.25C8.8705 11.5 8.5565 11.2177 8.5069 10.8517L8.5 10.75V4.75C8.5 4.336 8.836 4 9.25 4Z" />
               </svg>
-              <span className="ml-3 mr-16">&nbsp;History</span>
-              <FontAwesomeIcon icon={faChevronDown} />
+              <span className="ml-3">&nbsp;History</span>
+              {/* <FontAwesomeIcon icon={faChevronDown} /> */}
             </a>
           </li>
           <li>
             <a
-              href="#"
               className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
             >
               <svg
@@ -170,15 +168,14 @@ const SidebarMenu = () => {
         </ul>
         <ul className="pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
           <li>
-            <a
-              href="#"
-              className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
+            <span
+              className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 dark:hover:bg-gray-700 dark:text-white group"
             >
               <svg
                 viewBox="0 0 21 20"
                 fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
-                className="flex-shrink-0 w-6 h-6 text-[#F3F9FE] transition duration-75 dark:text-gray-400 group-hover:text-[#223E92] dark:group-hover:text-white"
+                className="flex-shrink-0 w-6 h-6 text-[#F3F9FE] transition duration-75 dark:text-gray-400 dark:group-hover:text-white"
               >
                 <path d="M3.5 4C3.5 2.61929 4.61929 1.5 6 1.5C7.38071 1.5 8.5 2.61929 8.5 4C8.5 5.38071 7.38071 6.5 6 6.5C4.61929 6.5 3.5 5.38071 3.5 4ZM6 0C3.79086 0 2 1.79086 2 4C2 6.20914 3.79086 8 6 8C8.2091 8 10 6.20914 10 4C10 1.79086 8.2091 0 6 0ZM13.5 5C13.5 4.17157 14.1716 3.5 15 3.5C15.8284 3.5 16.5 4.17157 16.5 5C16.5 5.82843 15.8284 6.5 15 6.5C14.1716 6.5 13.5 5.82843 13.5 5ZM15 2C13.3431 2 12 3.34315 12 5C12 6.65685 13.3431 8 15 8C16.6569 8 18 6.65685 18 5C18 3.34315 16.6569 2 15 2ZM2.25 10C1.00736 10 0 11.0074 0 12.25V12.5011V12.5022L1.00136e-05 12.5048L7.00951e-05 12.5111L0.000349998 12.5277C0.000639998 12.5406 0.00116999 12.5571 0.00209999 12.5771C0.00395999 12.6169 0.00744991 12.6705 0.0139799 12.7358C0.0270099 12.8661 0.05233 13.045 0.10165 13.2564C0.19995 13.6776 0.39654 14.2404 0.79183 14.8051C1.61066 15.9749 3.17178 17 6 17C7.36897 17 8.4411 16.7598 9.2758 16.3793C9.1268 15.8851 9.035 15.366 9.0082 14.8299C8.3633 15.2108 7.41267 15.5 6 15.5C3.57822 15.5 2.51434 14.6501 2.02067 13.9449C1.75971 13.5721 1.62818 13.1974 1.56241 12.9155C1.5297 12.7753 1.514 12.6612 1.50653 12.5865C1.50281 12.5493 1.50117 12.5222 1.50047 12.5072L1.5 12.4947V12.25C1.5 11.8358 1.83579 11.5 2.25 11.5H9.7322C9.9807 11.0233 10.2865 10.5813 10.6405 10.1831C10.3674 10.0653 10.0663 10 9.75 10H2.25ZM12.2772 10.9759C12.592 12.0661 11.9376 13.1995 10.836 13.4721L10.2518 13.6166C10.2069 13.9043 10.1836 14.1995 10.1836 14.5003C10.1836 14.815 10.2091 15.1235 10.2582 15.4237L10.7976 15.5536C11.9102 15.8216 12.5715 16.9666 12.2476 18.0641L12.0613 18.6954C12.5005 19.081 13.0009 19.3942 13.5455 19.6169L14.0388 19.0982C14.8273 18.269 16.1496 18.2692 16.9379 19.0987L17.4366 19.6235C17.9801 19.4032 18.4801 19.093 18.9194 18.7106L18.7214 18.0247C18.4066 16.9344 19.061 15.801 20.1626 15.5285L20.7463 15.384C20.7912 15.0963 20.8145 14.8011 20.8145 14.5003C20.8145 14.1856 20.789 13.877 20.7399 13.5767L20.2009 13.4469C19.0884 13.179 18.4271 12.034 18.751 10.9364L18.9371 10.3056C18.498 9.9198 17.9975 9.6066 17.4529 9.3838L16.9598 9.9023C16.1713 10.7316 14.849 10.7313 14.0607 9.9018L13.5619 9.377C13.0184 9.5972 12.5184 9.9073 12.0791 10.2897L12.2772 10.9759ZM15.4991 16.0003C14.6984 16.0003 14.0494 15.3287 14.0494 14.5003C14.0494 13.6719 14.6984 13.0003 15.4991 13.0003C16.2997 13.0003 16.9487 13.6719 16.9487 14.5003C16.9487 15.3287 16.2997 16.0003 15.4991 16.0003Z" />
               </svg>
@@ -187,12 +184,12 @@ const SidebarMenu = () => {
                 viewBox="0 0 20 20"
                 fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
-                className="flex-shrink-0 w-6 h-6 text-[#F3F9FE] transition duration-75 dark:text-gray-400 group-hover:text-[#223E92] dark:group-hover:text-white"
+                className="flex-shrink-0 w-6 h-6 text-[#F3F9FE] transition duration-75 dark:text-gray-400 dark:group-hover:text-white"
               >
                 <path d="M10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0ZM10 1.5C5.30558 1.5 1.5 5.30558 1.5 10C1.5 14.6944 5.30558 18.5 10 18.5C14.6944 18.5 18.5 14.6944 18.5 10C18.5 5.30558 14.6944 1.5 10 1.5ZM10 5C10.4142 5 10.75 5.33579 10.75 5.75V9.25H14.25C14.6642 9.25 15 9.5858 15 10C15 10.4142 14.6642 10.75 14.25 10.75H10.75V14.25C10.75 14.6642 10.4142 15 10 15C9.5858 15 9.25 14.6642 9.25 14.25V10.75H5.75C5.33579 10.75 5 10.4142 5 10C5 9.5858 5.33579 9.25 5.75 9.25H9.25V5.75C9.25 5.33579 9.5858 5 10 5Z" />
                 <path d="M10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0ZM10 1.5C5.30558 1.5 1.5 5.30558 1.5 10C1.5 14.6944 5.30558 18.5 10 18.5C14.6944 18.5 18.5 14.6944 18.5 10C18.5 5.30558 14.6944 1.5 10 1.5ZM10 5C10.4142 5 10.75 5.33579 10.75 5.75V9.25H14.25C14.6642 9.25 15 9.5858 15 10C15 10.4142 14.6642 10.75 14.25 10.75H10.75V14.25C10.75 14.6642 10.4142 15 10 15C9.5858 15 9.25 14.6642 9.25 14.25V10.75H5.75C5.33579 10.75 5 10.4142 5 10C5 9.5858 5.33579 9.25 5.75 9.25H9.25V5.75C9.25 5.33579 9.5858 5 10 5Z" />
               </svg>
-            </a>
+            </span>
           </li>
           <li>
             <a
@@ -275,26 +272,6 @@ const SidebarMenu = () => {
             </a>
           </li>
         </ul>
-        {/* <ul className="pt-4 mt-16 space-y-2 border-t border-gray-200 bottom-0 relative dark:border-gray-700">
-          <li>
-            <a
-              href="/login"
-              className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
-              onClick={auth.logout}
-            >
-              <svg
-                viewBox="0 0 19 18"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-                className="flex-shrink-0 w-6 h-6 text-[#F3F9FE] transition duration-75 dark:text-gray-400 group-hover:text-[#223E92] dark:group-hover:text-white"
-              >
-                <path d="M12 17.4C12.3313 17.4 12.6 17.1313 12.6 16.8C12.6 16.4687 12.3313 16.2 12 16.2H4.19998C2.87449 16.2 1.79998 15.1255 1.79998 13.8V4.20001C1.79998 2.87452 2.87449 1.80001 4.19998 1.80001H12C12.3313 1.80001 12.6 1.53137 12.6 1.20001C12.6 0.868638 12.3313 0.600006 12 0.600006H4.19998C2.21176 0.600006 0.599976 2.21179 0.599976 4.20001V13.8C0.599976 15.7883 2.21176 17.4 4.19998 17.4H12ZM13.3757 4.37575C13.61 4.14142 13.9899 4.14142 14.2243 4.37575L18.4243 8.57575C18.6585 8.81006 18.6585 9.18997 18.4243 9.42432L14.2243 13.6243C13.9899 13.8586 13.61 13.8586 13.3757 13.6243C13.1414 13.39 13.1414 13.01 13.3757 12.7757L16.5515 9.60001H5.99998C5.66861 9.60001 5.39998 9.33133 5.39998 9.00001C5.39998 8.66864 5.66861 8.40001 5.99998 8.40001H16.5515L13.3757 5.22427C13.1414 4.98995 13.1414 4.61006 13.3757 4.37575Z" />
-              </svg>
-              <span className="ml-4 mr-1">Log</span>
-              <span>Out</span>
-            </a>
-          </li>
-        </ul> */}
       </div>
     </div>
   );

@@ -168,7 +168,7 @@ function Table({ columns, data }) {
                     </button>
                     {showModal ? (
                         <>
-                            <div class="flex mt-12 py-12 w-auto overflow-x-hidden overflow-y-auto z-10 fixed top-0 right-0 bottom-0 left-0 outline-none focus:outline-none w-full md:inset-0 h-modal md:h-full">
+                            <div className="flex mt-12 py-12 w-auto overflow-x-hidden overflow-y-auto z-10 fixed top-0 right-0 bottom-0 left-0 outline-none focus:outline-none w-full md:inset-0 h-modal md:h-full">
                                 <div role="alert" className="container mx-auto w-11/12 md:w-2/3 max-w-lg">
                                     <div className="relative py-8 px-5 md:px-10 bg-white shadow-md rounded border border-gray-400">
                                         <div className="w-full flex justify-start text-gray-600 mb-3">
