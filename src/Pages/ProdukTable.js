@@ -239,7 +239,7 @@ function Table({ columns, data }) {
                 </div>
             </div>
             {/* table */}
-            <div className="mt-11 flex flex-col max-h-screen max-w-7xl">
+            <div className="mt-11 flex flex-col max-h-96 max-w-7xl">
                 <div className="-my-2 overflow-x-auto -mx-4 sm:-mx-6 lg:-mx-8">
                     <div className="py-2 align-middle inline-block max-h-min sm:px-4 lg:px-4">
                         <div className="shadow overflow-auto border-b border-gray-200 sm:rounded-lg">

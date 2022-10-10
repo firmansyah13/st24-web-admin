@@ -239,11 +239,11 @@ function Table({ columns, data }) {
                 </div>
             </div>
             {/* table */}
-            <div className="mt-11 flex flex-col" style={{ height: "550px" }}>
+            <div className="mt-11 flex flex-col max-h-96 max-w-5xl">
                 <div className="-my-2 overflow-x-auto -mx-4 sm:-mx-6 lg:-mx-8">
-                    <div className="align-middle inline-block max-w-screen sm:px-4 lg:px-4">
+                    <div className="align-middle inline-block max-w-min sm:px-4 lg:px-4">
                         <div className="shadow overflow-auto border-b border-gray-200 sm:rounded-lg">
-                            <table {...getTableProps()} className="min-w-full divide-y divide-gray-200">
+                            <table {...getTableProps()} className="max-w-min divide-y divide-gray-200">
                                 <thead className="bg-gray-50">
                                     {headerGroups.map(headerGroup => (
                                         <tr {...headerGroup.getHeaderGroupProps()}>
