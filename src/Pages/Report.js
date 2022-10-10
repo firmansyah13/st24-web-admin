@@ -7,11 +7,11 @@ import { HiOutlineViewList, HiOutlineTrendingUp, HiOutlineSwitchHorizontal, HiOu
 const Report = () => {
     const [showModal, setShowModal] = useState(false);
     return (
-        <div className="flex">
+        <div className="flex h-full sm:h-full">
             <Sidebar />
-            <div className="h-full flex-1">
+            <div className="h-full sm:h-screen flex-1">
                 <NavMenu />
-                <div className="container px-4">
+                <div className="container max-h-screen px-4">
                     <h1 className="text-2xl font-semibold text-left mt-2 mb-2">
                         Report
                     </h1>
