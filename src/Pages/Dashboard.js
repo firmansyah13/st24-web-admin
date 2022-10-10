@@ -4,7 +4,7 @@ import Sidebar from "../Components/SidebarMenu";
 
 const Dashboard = () => {
   return (
-    <div className="flex h-screen">
+    <div className="flex sm:h-full">
       <Sidebar />
       <div className="h-full sm:h-full flex-1">
         <NavMenu />
