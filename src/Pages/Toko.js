@@ -76,7 +76,7 @@ const DropdownComponent = () => {
                     Edit Product
                   </h1>
                   <label
-                    for="name"
+                    htmlFor="name"
                     className="text-gray-800 text-sm font-bold leading-tight tracking-normal"
                   >
                     Owner Name
@@ -88,7 +88,7 @@ const DropdownComponent = () => {
                     placeholder="James"
                   />
                   <label
-                    for="email2"
+                    htmlFor="email2"
                     className="text-gray-800 text-sm font-bold leading-tight tracking-normal"
                   >
                     Card Number
@@ -121,7 +121,7 @@ const DropdownComponent = () => {
                     />
                   </div>
                   <label
-                    for="expiry"
+                    htmlFor="expiry"
                     className="text-gray-800 text-sm font-bold leading-tight tracking-normal"
                   >
                     Expiry Date
@@ -155,7 +155,7 @@ const DropdownComponent = () => {
                     />
                   </div>
                   <label
-                    for="cvc"
+                    htmlFor="cvc"
                     className="text-gray-800 text-sm font-bold leading-tight tracking-normal"
                   >
                     CVC
