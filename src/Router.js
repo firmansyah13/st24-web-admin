@@ -6,6 +6,7 @@ import Produk from "./Pages/Produk";
 import Report from "./Pages/Report";
 import User from "./Pages/User";
 import Rebate from "./Pages/Rebate";
+import Tiket from "./Pages/Tiket";
 import {
   BrowserRouter,
   Route,
@@ -26,6 +27,7 @@ export default function RouterApp() {
             <Route path="/user" element={<User />} />
             <Route path="/report" element={<Report />} />
             <Route path="/rebate" element={<Rebate />} />
+            <Route path="/tiket-deposit" element={<Tiket />} />
         </Routes>
       </BrowserRouter>
   );
