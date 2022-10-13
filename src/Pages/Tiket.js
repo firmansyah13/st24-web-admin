@@ -86,7 +86,7 @@ const Tiket = () => {
                                     >
                                         <Tabs.Item title="Tiket">
                                             <Table hoverable={true}>
-                                                <Table.Head>
+                                                <Table.Head className="bg-[#E8F8FD] text-[#223E92]">
                                                     <Table.HeadCell>
                                                         Insert Time
                                                     </Table.HeadCell>
@@ -126,7 +126,7 @@ const Tiket = () => {
                                         </Tabs.Item>
                                         <Tabs.Item title="Mutasi Bank">
                                             <Table hoverable={true}>
-                                                <Table.Head>
+                                                <Table.Head className="bg-[#E8F8FD] text-[#223E92]">
                                                     <Table.HeadCell>
                                                         Trans Date
                                                     </Table.HeadCell>

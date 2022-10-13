@@ -51,7 +51,7 @@ const Dashboard = () => {
 
           <div className="overflow-x-auto relative shadow-md sm:rounded-lg rounded-lg">
             <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 border-[#E7E8EA]">
-              <thead className="text-xs text-[#223E92] bg-[#E8F8FD] uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+              <thead className="bg-[#E8F8FD] text-[#223E92] text-base font-semibold uppercase dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                   <th scope="col" className="py-3 px-6">
                     No

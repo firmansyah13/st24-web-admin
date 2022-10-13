@@ -27,7 +27,7 @@ const Report = () => {
                             List Mitra
                             <div className="mt-4">
                                 <Table>
-                                    <Table.Head>
+                                    <Table.Head className="bg-[#E8F8FD] text-[#223E92] text-base font-semibold">
                                         <Table.HeadCell>
                                             Product name
                                         </Table.HeadCell>
@@ -287,7 +287,7 @@ const Report = () => {
                             Dashboard content
                             <div className="mt-4">
                                 <Table>
-                                    <Table.Head>
+                                    <Table.Head className="bg-[#E8F8FD] text-[#223E92] text-base font-semibold">
                                         <Table.HeadCell>
                                             Product name
                                         </Table.HeadCell>
@@ -384,7 +384,7 @@ const Report = () => {
                             Settings content
                             <div className="mt-4">
                                 <Table>
-                                    <Table.Head>
+                                    <Table.Head className="bg-[#E8F8FD] text-[#223E92] text-base font-semibold">
                                         <Table.HeadCell>
                                             Product name
                                         </Table.HeadCell>
@@ -481,7 +481,7 @@ const Report = () => {
                             Contacts content
                             <div className="mt-4">
                                 <Table>
-                                    <Table.Head>
+                                    <Table.Head className="bg-[#E8F8FD] text-[#223E92] text-base font-semibold">
                                         <Table.HeadCell>
                                             Product name
                                         </Table.HeadCell>
@@ -578,7 +578,7 @@ const Report = () => {
                             Saldo
                             <div className="mt-4">
                                 <Table>
-                                    <Table.Head>
+                                    <Table.Head className="bg-[#E8F8FD] text-[#223E92] text-base font-semibold">
                                         <Table.HeadCell>
                                             Product name
                                         </Table.HeadCell>
@@ -675,7 +675,7 @@ const Report = () => {
                             Settings content
                             <div className="mt-4">
                                 <Table>
-                                    <Table.Head>
+                                    <Table.Head className="bg-[#E8F8FD] text-[#223E92] text-base font-semibold">
                                         <Table.HeadCell>
                                             Product name
                                         </Table.HeadCell>
@@ -772,7 +772,7 @@ const Report = () => {
                             Costom Query Report
                             <div className="mt-4">
                                 <Table>
-                                    <Table.Head>
+                                    <Table.Head className="bg-[#E8F8FD] text-[#223E92] text-base font-semibold">
                                         <Table.HeadCell>
                                             Product name
                                         </Table.HeadCell>

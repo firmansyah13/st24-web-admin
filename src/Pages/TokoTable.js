@@ -244,7 +244,7 @@ function Table({ columns, data }) {
                     <div className="align-middle inline-block max-w-min sm:px-4 lg:px-4">
                         <div className="shadow overflow-auto border-b border-gray-200 sm:rounded-lg">
                             <table {...getTableProps()} className="max-w-min divide-y divide-gray-200">
-                                <thead className="bg-gray-50">
+                                <thead className="bg-[#E8F8FD] text-[#223E92]">
                                     {headerGroups.map(headerGroup => (
                                         <tr {...headerGroup.getHeaderGroupProps()}>
                                             {headerGroup.headers.map(column => (
@@ -252,7 +252,7 @@ function Table({ columns, data }) {
                                                 // we can add them into the header props
                                                 <th
                                                     scope="col"
-                                                    className="group px-6 py-3 text-center text-xs font-medium text-[#223E92] uppercase tracking-wider"
+                                                    className="group px-6 py-3 text-center text-base font-semibold text-[#223E92] uppercase tracking-wider"
                                                     {...column.getHeaderProps(column.getSortByToggleProps())}
                                                 >
                                                     <div className="flex items-center justify-between">
