@@ -10,7 +10,7 @@ const Tiket = () => {
             <Sidebar />
             <div className="h-full sm:h-screen flex-1">
                 <NavMenu />
-                <div className="container-fluid max-h-screen px-2">
+                <div className="container-fluid max-h-screen px-2" style={{ height: "auto" }}>
                     <h1 className="text-2xl font-semibold text-left mt-2 mb-2">Tiket Deposit</h1>
                     <div className='flex max-h-screen'>
                         <div className="rounded-xl border p-5 shadow-md h-full w-full bg-white">
@@ -119,7 +119,7 @@ const Tiket = () => {
                                                 </Table.Head>
                                                 <Table.Body className="divide-y">
                                                     <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                        
+
                                                     </Table.Row>
                                                 </Table.Body>
                                             </Table>
@@ -160,13 +160,12 @@ const Tiket = () => {
                                                 </Table.Head>
                                                 <Table.Body className="divide-y">
                                                     <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                        
+
                                                     </Table.Row>
                                                 </Table.Body>
                                             </Table>
                                         </Tabs.Item>
                                     </Tabs.Group>
-                                    {/* <Card></Card> */}
                                 </div>
                             </div>
                         </div>

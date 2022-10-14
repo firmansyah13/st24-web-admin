@@ -8,7 +8,7 @@ const Dashboard = () => {
       <Sidebar />
       <div className="h-full sm:h-screen flex-1">
         <NavMenu />
-        <div className="container-fluid max-h-screen px-2">
+        <div className="container-fluid max-h-screen px-2" style={{ height: "auto" }}>
           <h1 className="text-2xl font-semibold text-left mt-2 mb-2">Dashboard</h1>
           <div className="w-full grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mb-8 gap-8">
             <div className="bg-[#F1FCF6] dark:bg-gray-800 rounded py-5 pl-6 flex items-start shadow">
