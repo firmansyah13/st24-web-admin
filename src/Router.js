@@ -7,6 +7,9 @@ import Report from "./Pages/Report";
 import User from "./Pages/User";
 import Rebate from "./Pages/Rebate";
 import Tiket from "./Pages/Tiket";
+import Inout from "./Pages/Inout";
+import Broadcast from "./Pages/Broadcast";
+import SMSCP from "./Pages/SMSCP";
 import {
   BrowserRouter,
   Route,
@@ -28,6 +31,9 @@ export default function RouterApp() {
             <Route path="/report" element={<Report />} />
             <Route path="/rebate" element={<Rebate />} />
             <Route path="/tiket-deposit" element={<Tiket />} />
+            <Route path="/inout" element={<Inout />} />
+            <Route path="/broadcast" element={<Broadcast />} />
+            <Route path="/smscp" element={<SMSCP />} />
         </Routes>
       </BrowserRouter>
   );

@@ -85,12 +85,11 @@ const SidebarMenu = () => {
                   </svg>
                   <div className="accordion-title -ml-9 -mt-6 p-0.5">&nbsp;Messaging</div>
                   <FontAwesomeIcon icon={faChevronDown} className="absolute right-7 -mt-5" />
-                  {/* <div> */}
                   {isActive && <div className="accordion-content">
                     <ul className="">
                       <li>
                         <a
-                          href="#"
+                          href="/inout"
                           class="flex items-center p-2 pl-11 w-full text-base font-normal text-[#F3F9FE] rounded-lg transition duration-75 group-hover:text-[#223E92] dark:text-white dark:hover:bg-gray-700"
                         >
                           In/Out Box
@@ -98,7 +97,7 @@ const SidebarMenu = () => {
                       </li>
                       <li>
                         <a
-                          href="#"
+                          href="/broadcast"
                           class="flex items-center p-2 pl-11 w-full text-base font-normal text-[#F3F9FE] rounded-lg transition duration-75 group-hover:text-[#223E92] dark:text-white dark:hover:bg-gray-700"
                         >
                           Broadcast
@@ -106,7 +105,7 @@ const SidebarMenu = () => {
                       </li>
                       <li>
                         <a
-                          href="#"
+                          href="/smscp"
                           class="flex items-center p-2 pl-11 w-full text-base font-normal text-[#F3F9FE] rounded-lg transition duration-75 group-hover:text-[#223E92] dark:text-white dark:hover:bg-gray-700"
                         >
                           SMS CP
@@ -114,40 +113,9 @@ const SidebarMenu = () => {
                       </li>
                     </ul>
                   </div>}
-                  {/* </div> */}
                 </button>
               </div>
             </div>
-            {/* <a
-              type="button"
-              onClick={() => setShowSettings(!showSettings)}
-              className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
-            >
-              <svg
-                viewBox="0 0 20 21"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-                className="flex-shrink-0 w-6 h-6 text-[#F3F9FE] transition duration-75 dark:text-gray-400 group-hover:text-[#223E92] dark:group-hover:text-white"
-                aria-controls="dropdown-example" 
-                data-collapse-toggle="dropdown-example"
-              >
-                <path d="M10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C8.3817 20 6.81782 19.6146 5.41286 18.888L1.58704 19.9553C0.92212 20.141 0.23258 19.7525 0.04691 19.0876C-0.01454 18.8676 -0.0145099 18.6349 0.0469501 18.4151L1.11461 14.5922C0.38637 13.186 0 11.6203 0 10C0 4.47715 4.47715 0 10 0ZM10 1.5C5.30558 1.5 1.5 5.30558 1.5 10C1.5 11.4696 1.87277 12.8834 2.57303 14.1375L2.72368 14.4072L1.61096 18.3914L5.59755 17.2792L5.86709 17.4295C7.12006 18.1281 8.5322 18.5 10 18.5C14.6944 18.5 18.5 14.6944 18.5 10C18.5 5.30558 14.6944 1.5 10 1.5ZM6.75 11H11.2483C11.6625 11 11.9983 11.3358 11.9983 11.75C11.9983 12.1297 11.7161 12.4435 11.35 12.4932L11.2483 12.5H6.75C6.33579 12.5 6 12.1642 6 11.75C6 11.3703 6.28215 11.0565 6.64823 11.0068L6.75 11H11.2483H6.75ZM6.75 7.5H13.2545C13.6687 7.5 14.0045 7.83579 14.0045 8.25C14.0045 8.6297 13.7223 8.9435 13.3563 8.9932L13.2545 9H6.75C6.33579 9 6 8.6642 6 8.25C6 7.8703 6.28215 7.55651 6.64823 7.50685L6.75 7.5H13.2545H6.75Z" />
-              </svg>
-              <span className="ml-3">&nbsp;Broadcast</span>
-            {(showSettings ?
-              <ul className="">
-                <li>
-                  <a href="#" class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Products</a>
-                </li>
-                <li>
-                  <a href="#" class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Billing</a>
-                </li>
-                <li>
-                  <a href="#" class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Invoice</a>
-                </li>
-              </ul>
-              : '')}
-            </a> */}
           </li>
           <li>
             <a
@@ -178,8 +146,8 @@ const SidebarMenu = () => {
               >
                 <path d="M18.25 0C19.2165 0 20.0001 0.7835 20.0001 1.74996V4.01021C20.0001 4.40055 19.7008 4.72565 19.3118 4.75772C18.1512 4.85342 17.25 5.8273 17.25 7C17.25 8.1727 18.1512 9.1466 19.3118 9.2423C19.7008 9.2744 20.0001 9.5995 20.0001 9.9898V12.25C20.0001 13.2165 19.2165 14 18.25 14H1.75C0.7835 14 0 13.2165 0 12.2499L0.000289917 9.9896C0.000339917 9.5994 0.29964 9.2744 0.68856 9.2423C1.84903 9.1464 2.75 8.1726 2.75 7C2.75 5.8274 1.84903 4.8536 0.68856 4.75775C0.29964 4.72562 0.000339917 4.40063 0.000289917 4.01039L0 1.75C0 0.7835 0.7835 0 1.75 0H18.25ZM18.5001 3.38474V1.75C18.5001 1.61193 18.3881 1.5 18.25 1.5H1.75C1.61193 1.5 1.5 1.61193 1.5 1.7499L1.50021 3.38483C3.09313 3.82406 4.25 5.284 4.25 7C4.25 8.716 3.09313 10.1759 1.50021 10.6152L1.5 12.25C1.5 12.3881 1.61193 12.5 1.75 12.5H18.25C18.3881 12.5 18.5001 12.3881 18.5001 12.25V10.6153C16.907 10.1761 15.75 8.7161 15.75 7C15.75 5.3525 16.8163 3.94108 18.3111 3.44229L18.5001 3.38474Z" />
               </svg>
-              <span className="ml-3 mr-1">&nbsp;Tiket</span>
-              <span>Deposit</span>
+              <span className="ml-3 mr-1">&nbsp;Deposit</span>
+              <span>Ticket</span>
             </a>
           </li>
           <li>
