@@ -7,6 +7,8 @@ import NavMenu from "../Components/NavMenu";
 import Sidebar from "../Components/SidebarMenu";
 import { Modal, Button } from "flowbite";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
+import Dela from "./dela.png";
+import Dina from "./dina.png";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -307,26 +309,27 @@ const getData = () => {
   const data = [
     {
       no: "1",
-      nama: "Samsung Note 20",
+      nama: "Contoh 1",
       merk: "Samsung",
       berat: "200",
       stok: "10",
       harga: "12000000",
       diskon: "0",
       imgUrl:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+        Dela,
       act: <DropdownComponent />,
     },
     {
-      name: "Cody Fisher",
-      email: "cody.fisher@example.com",
-      title: "Product Directives Officer",
-      department: "Intranet",
-      status: "Inactive",
-      role: "Owner",
-      age: 43,
+      no: "2",
+      nama: "Contoh 2",
+      merk: "Samsung",
+      berat: "200",
+      stok: "10",
+      harga: "12000000",
+      diskon: "0",
       imgUrl:
-        "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+        Dina,
+      act: <DropdownComponent />,
     },
     {
       name: "Esther Howard",
