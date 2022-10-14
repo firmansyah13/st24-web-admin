@@ -1,20 +1,42 @@
 import React from "react";
 import NavMenu from "../Components/NavMenu";
 import Sidebar from "../Components/SidebarMenu";
-import { Select2 } from "select2-react-component";
-// import { Select } from "flowbite-react";
+import AsyncSelect from 'react-select/async';
+import { ColourOption, colourOptions } from './docs/data';
 
-const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
-];
+// const options = [
+//     { value: 'chocolate', label: 'Chocolate' },
+//     { value: 'strawberry', label: 'Strawberry' },
+//     { value: 'vanilla', label: 'Vanilla' }
+// ];
 
-// const MyComponent = () => (
-//   <Select options={options} />
-// )
+interface State {
+    readonly inputValue: string;
+}
+
+const filterColors = (inputValue: string) => {
+    return colourOptions.filter((i) =>
+        i.label.toLowerCase().includes(inputValue.toLowerCase())
+    );
+};
+
+const loadOptions = (
+    inputValue: string,
+    callback: (options: ColourOption[]) => void
+) => {
+    setTimeout(() => {
+        callback(filterColors(inputValue));
+    }, 1000);
+};
+
 
 const Broadcast = () => {
+    state: State = { inputValue: '' };
+    handleInputChange = (newValue: string) => {
+        const inputValue = newValue.replace(/\W/g, '');
+        this.setState({ inputValue });
+        return inputValue;
+    };
     return (
         <div className="flex h-full sm:h-full">
             <Sidebar />
@@ -24,10 +46,12 @@ const Broadcast = () => {
                     <h1 className="text-2xl font-semibold text-left mt-2 mb-2">Broadcast</h1>
                     <div className='flex max-h-screen'>
                         <div className="rounded-xl border p-5 shadow-md h-full w-full bg-white">
-                            <Select2 data={options}
-                                value={this.value}
-                                update={value => this.update(value)}>
-                            </Select2>
+                            <AsyncSelect
+                                cacheOptions
+                                loadOptions={loadOptions}
+                                defaultOptions
+                                onInputChange={this.handleInputChange}
+                            />
                         </div>
                     </div>
                 </div>

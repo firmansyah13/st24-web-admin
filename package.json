@@ -21,9 +21,9 @@
     "react-router": "^6.4.1",
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
+    "react-select": "^5.5.0",
     "react-simple-captcha": "^9.0.1",
     "react-table": "^7.8.0",
-    "select2-react-component": "^6.1.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
