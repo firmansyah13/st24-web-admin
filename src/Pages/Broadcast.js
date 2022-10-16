@@ -3,7 +3,6 @@ import NavMenu from "../Components/NavMenu";
 import Sidebar from "../Components/SidebarMenu";
 import Select from "react-select";
 import { Label, Textarea } from "flowbite-react";
-// import MultiValue from "react-select/dist/declarations/src/components/MultiValue";
 
 const Broadcast = () => {
     const options = [

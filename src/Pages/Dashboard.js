@@ -49,9 +49,9 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="overflow-x-auto relative shadow-md sm:rounded-lg rounded-lg">
-            <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 border-[#E7E8EA]">
-              <thead className="bg-[#E8F8FD] text-[#223E92] text-base font-semibold uppercase dark:bg-gray-700 dark:text-gray-400">
+          <div className="overflow-auto relative shadow-md sm:rounded-lg rounded-lg">
+            <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 border-black">
+              <thead className="bg-[#11133E] text-white text-base font-semibold uppercase dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                   <th scope="col" className="py-3 px-6">
                     No

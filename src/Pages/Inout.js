@@ -1,7 +1,7 @@
 import React from "react";
 import NavMenu from "../Components/NavMenu";
 import Sidebar from "../Components/SidebarMenu";
-import { FaRedoAlt, FaEraser, FaSearch } from "react-icons/fa";
+import { FaEraser, FaSearch } from "react-icons/fa";
 import { Dropdown, Table } from "flowbite-react";
 
 const Inout = () => {

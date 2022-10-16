@@ -1,4 +1,4 @@
-import React, { useContext, memo } from "react";
+import React from "react";
 import Login from "./Pages/Login";
 import Dashboard from "./Pages/Dashboard";
 import Toko from "./Pages/Toko";
@@ -10,15 +10,17 @@ import Tiket from "./Pages/Tiket";
 import Inout from "./Pages/Inout";
 import Broadcast from "./Pages/Broadcast";
 import SMSCP from "./Pages/SMSCP";
+import Logs from "./Pages/Logs";
+import Price from "./Pages/Price";
 import {
   BrowserRouter,
   Route,
   Routes,
 } from "react-router-dom";
-import { AuthContext } from "./context";
+// import { AuthContext } from "./context";
 
 export default function RouterApp() {
-  const auth = useContext(AuthContext);
+  // const auth = useContext(AuthContext);
   
   return (
       <BrowserRouter>
@@ -30,10 +32,12 @@ export default function RouterApp() {
             <Route path="/user" element={<User />} />
             <Route path="/report" element={<Report />} />
             <Route path="/rebate" element={<Rebate />} />
-            <Route path="/tiket-deposit" element={<Tiket />} />
+            <Route path="/deposit-ticket" element={<Tiket />} />
             <Route path="/inout" element={<Inout />} />
             <Route path="/broadcast" element={<Broadcast />} />
             <Route path="/smscp" element={<SMSCP />} />
+            <Route path="/logs-history" element={<Logs />} />
+            <Route path="/price" element={<Price />} />
         </Routes>
       </BrowserRouter>
   );

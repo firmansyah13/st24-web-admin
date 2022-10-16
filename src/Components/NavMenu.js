@@ -3,7 +3,6 @@ import { Label, TextInput } from "flowbite-react";
 import { Transition, Disclosure, Menu } from "@headlessui/react";
 import { HiOutlineSearch, HiOutlineBell } from "react-icons/hi";
 import PP from "./dina.png";
-// import { AuthContext } from "../context";
 
 const navigation = [
     { name: 'Dashboard', href: '#', current: true },

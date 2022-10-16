@@ -8,8 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faKey } from "@fortawesome/free-solid-svg-icons";
 import { AuthContext } from "../context";
 import { useNavigate } from "react-router-dom";
-// import Spiner from "./Spinner";
-// import useAuth from "../hooks/useAuth";
 
 const Login = () => {
   
@@ -24,7 +22,7 @@ const Login = () => {
       e.preventDefault();
       setUser({ username, password });
       // <Spiner />
-      if (setUser == auth.login) {
+      if (setUser === auth.login) {
         navigate("/login");
       } else {
         navigate("/");

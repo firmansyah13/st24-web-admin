@@ -5,8 +5,6 @@ import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavMenu from "../Components/NavMenu";
 import Sidebar from "../Components/SidebarMenu";
-import { Modal, Button } from "flowbite";
-import { HiOutlineExclamationCircle } from "react-icons/hi";
 import Dela from "./dela.png";
 import Dina from "./dina.png";
 

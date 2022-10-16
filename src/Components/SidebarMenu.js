@@ -3,18 +3,14 @@ import {
   faChevronLeft,
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
-import { HiShoppingBag } from "react-icons/hi";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Sidebar.css";
 import Logo from "./logo.svg";
 import { AuthContext } from "../context";
-import { Sidebar } from "flowbite-react";
 
 const SidebarMenu = () => {
   const [open, setOpen] = useState(true);
   const auth = useContext(AuthContext);
-  const [showSettings, setShowSettings] = useState(false);
   const [isActive, setIsActive] = useState(false);
   return (
     <div
@@ -135,7 +131,7 @@ const SidebarMenu = () => {
           </li>
           <li>
             <a
-              href="/tiket-deposit"
+              href="/deposit-ticket"
               className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
             >
               <svg
@@ -168,7 +164,7 @@ const SidebarMenu = () => {
           </li>
           <li>
             <a
-              href="#"
+              href="/logs-history"
               className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
             >
               <svg
@@ -179,7 +175,7 @@ const SidebarMenu = () => {
               >
                 <path d="M10 0C15.523 0 20 4.478 20 10C20 15.522 15.523 20 10 20C4.477 20 0 15.522 0 10C0 4.478 4.477 0 10 0ZM10 1.667C5.405 1.667 1.667 5.405 1.667 10C1.667 14.595 5.405 18.333 10 18.333C14.595 18.333 18.333 14.595 18.333 10C18.333 5.405 14.595 1.667 10 1.667ZM9.25 4C9.6295 4 9.9435 4.28233 9.9931 4.64827L10 4.75V10H13.25C13.664 10 14 10.336 14 10.75C14 11.1295 13.7177 11.4435 13.3517 11.4931L13.25 11.5H9.25C8.8705 11.5 8.5565 11.2177 8.5069 10.8517L8.5 10.75V4.75C8.5 4.336 8.836 4 9.25 4Z" />
               </svg>
-              <span className="ml-3">&nbsp;History</span>
+              <span className="ml-3">&nbsp;Logs History</span>
             </a>
           </li>
           <li>
@@ -286,7 +282,7 @@ const SidebarMenu = () => {
           </li>
           <li>
             <a
-              href="#"
+              href="/price"
               className="flex items-center p-2 text-sm font-bold text-[#F3F9FE] rounded-lg transition duration-75 hover:bg-[#F3F9FE] hover:text-[#223E92] dark:hover:bg-gray-700 dark:text-white group"
             >
               <svg
@@ -301,7 +297,7 @@ const SidebarMenu = () => {
                   fill="#F5B51B"
                 />
               </svg>
-              <span className="ml-4">Harga</span>
+              <span className="ml-4">Price</span>
             </a>
           </li>
         </ul>

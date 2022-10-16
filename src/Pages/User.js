@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import NavMenu from "../Components/NavMenu";
 import Sidebar from "../Components/SidebarMenu";
-import { faPlus, faKey } from "@fortawesome/free-solid-svg-icons";
+import { faKey } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Card, Label, TextInput, Modal, Button, Checkbox, Select } from "flowbite-react";
+import { Label, Checkbox, Select } from "flowbite-react";
 
 const User = () => {
     const [showModal, setShowModal] = useState(false);
