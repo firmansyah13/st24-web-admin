@@ -1,18 +1,20 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import Table, { AvatarCell } from "./ProdukTable";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavMenu from "../Components/NavMenu";
 import Sidebar from "../Components/SidebarMenu";
+import Dela from "./dela.png";
+import Dina from "./dina.png";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 const DropdownComponent = () => {
-  const [showModalEdit, setShowModalEdit] = React.useState(false);
-  const [showModalDelete, setShowModalDelete] = React.useState(false);
+  const [showModalEdit, setShowModalEdit] = useState(false);
+  const [showModalDelete, setShowModalDelete] = useState(false);
   return (
     <>
       <Menu as="div" className="relative inline-block text-left">
@@ -248,9 +250,9 @@ const DropdownComponent = () => {
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          fill-rule="evenodd"
+                          fillRule="evenodd"
                           d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                          clip-rule="evenodd"
+                          clipRule="evenodd"
                         ></path>
                       </svg>
                       <span className="sr-only">Close modal</span>
@@ -305,26 +307,27 @@ const getData = () => {
   const data = [
     {
       no: "1",
-      nama: "Samsung Note 20",
+      nama: "Contoh 1",
       merk: "Samsung",
       berat: "200",
       stok: "10",
       harga: "12000000",
       diskon: "0",
       imgUrl:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+        Dela,
       act: <DropdownComponent />,
     },
     {
-      name: "Cody Fisher",
-      email: "cody.fisher@example.com",
-      title: "Product Directives Officer",
-      department: "Intranet",
-      status: "Inactive",
-      role: "Owner",
-      age: 43,
+      no: "2",
+      nama: "Contoh 2",
+      merk: "Samsung",
+      berat: "200",
+      stok: "10",
+      harga: "12000000",
+      diskon: "0",
       imgUrl:
-        "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+        Dina,
+      act: <DropdownComponent />,
     },
     {
       name: "Esther Howard",
@@ -422,15 +425,15 @@ const Toko = () => {
   const data = React.useMemo(() => getData(), []);
 
   return (
-    <div className="flex">
+    <div className="flex h-full sm:h-full">
       <Sidebar />
-      <div className="h-full flex-1">
+      <div className="h-full sm:h-screen flex-1">
         <NavMenu />
-        <div className="container px-4">
+        <div className="container-fluid max-h-screen px-2" style={{ height: "auto" }}>
           <h1 className="text-2xl font-semibold text-left ml-4 mt-2 mb-2">
             Produk Management
           </h1>
-          <div className="min-h-screen text-gray-900">
+          <div className="max-h-screen text-gray-900">
             <main className="w-full sm:px-4 lg:px-8 pt-2">
               <div className="">
                 <Table columns={columns} data={data} />

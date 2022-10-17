@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import Table, { AvatarCell } from "./TokoTable";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
@@ -11,8 +11,8 @@ function classNames(...classes) {
 }
 
 const DropdownComponent = () => {
-  const [showModalEdit, setShowModalEdit] = React.useState(false);
-  const [showModalDelete, setShowModalDelete] = React.useState(false);
+  const [showModalEdit, setShowModalEdit] = useState(false);
+  const [showModalDelete, setShowModalDelete] = useState(false);
   return (
     <>
       <Menu as="div" className="relative inline-block text-left">
@@ -76,7 +76,7 @@ const DropdownComponent = () => {
                     Edit Product
                   </h1>
                   <label
-                    for="name"
+                    htmlFor="name"
                     className="text-gray-800 text-sm font-bold leading-tight tracking-normal"
                   >
                     Owner Name
@@ -88,7 +88,7 @@ const DropdownComponent = () => {
                     placeholder="James"
                   />
                   <label
-                    for="email2"
+                    htmlFor="email2"
                     className="text-gray-800 text-sm font-bold leading-tight tracking-normal"
                   >
                     Card Number
@@ -121,7 +121,7 @@ const DropdownComponent = () => {
                     />
                   </div>
                   <label
-                    for="expiry"
+                    htmlFor="expiry"
                     className="text-gray-800 text-sm font-bold leading-tight tracking-normal"
                   >
                     Expiry Date
@@ -155,7 +155,7 @@ const DropdownComponent = () => {
                     />
                   </div>
                   <label
-                    for="cvc"
+                    htmlFor="cvc"
                     className="text-gray-800 text-sm font-bold leading-tight tracking-normal"
                   >
                     CVC
@@ -248,9 +248,9 @@ const DropdownComponent = () => {
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          fill-rule="evenodd"
+                          fillRule="evenodd"
                           d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                          clip-rule="evenodd"
+                          clipRule="evenodd"
                         ></path>
                       </svg>
                       <span className="sr-only">Close modal</span>
@@ -429,62 +429,20 @@ const Toko = () => {
   const data = React.useMemo(() => getData(), []);
 
   return (
-    <div className="flex">
+    <div className="flex h-full sm:h-full">
       <Sidebar />
-      <div className="h-full flex-1">
+      <div className="h-full sm:h-screen flex-1">
         <NavMenu />
-        <div className="container px-4">
+        <div className="container-fluid max-h-screen px-2" style={{ height: "auto" }}>
           <h1 className="text-2xl font-semibold text-left ml-4 mt-2 mb-2">
             Toko Management
           </h1>
-          <div className="min-h-screen text-gray-900">
+          <div className="max-h-screen text-gray-900">
             <main className="w-full sm:px-4 lg:px-8 pt-2">
               <div className="">
                 <Table columns={columns} data={data} />
               </div>
             </main>
-          </div>
-          <div
-            id="dropdownDots"
-            className="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600"
-          >
-            <ul
-              className="py-1 text-sm text-gray-700 dark:text-gray-200"
-              aria-labelledby="dropdownMenuIconButton"
-            >
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >
-                  Dashboard
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >
-                  Settings
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                >
-                  Earnings
-                </a>
-              </li>
-            </ul>
-            <div className="py-1">
-              <a
-                href="#"
-                className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-              >
-                Separated link
-              </a>
-            </div>
           </div>
         </div>
       </div>
