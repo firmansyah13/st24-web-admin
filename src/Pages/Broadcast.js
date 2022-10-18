@@ -9,7 +9,8 @@ const Broadcast = () => {
         { value: 'chocolate', label: 'Chocolate' },
         { value: 'strawberry', label: 'Strawberry' },
         { value: 'vanilla', label: 'Vanilla' }
-    ]
+    ];
+
     return (
         <div className="flex h-full sm:h-full">
             <Sidebar />
@@ -22,7 +23,10 @@ const Broadcast = () => {
                             <form>
                                 <div>
                                     <label htmlFor="countries" className="block mb-2 text-sm text-left font-medium text-gray-900 dark:text-gray-400">Send To List of Recipient</label>
-                                    <Select options={options} value={options.values.value}></Select>
+                                    <Select
+                                        options={options}
+                                        isMulti
+                                    />
                                 </div>
                                 <div id="textarea">
                                     <div className="mb-2 text-left block">
