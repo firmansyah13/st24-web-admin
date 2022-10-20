@@ -1,10 +1,11 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import Table, { AvatarCell } from "./TokoTable";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavMenu from "../Components/NavMenu";
 import Sidebar from "../Components/SidebarMenu";
+import axios from "axios";
+import { data } from "autoprefixer";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -15,9 +16,9 @@ const DropdownComponent = () => {
   const [showModalDelete, setShowModalDelete] = useState(false);
   return (
     <>
-      <Menu as="div" className="relative inline-block text-left">
+      <Menu as="div" className="flex inline-block text-left">
         <div>
-          <Menu.Button className="inline-flex w-full justify-center rounded-md  bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+          <Menu.Button className="inline-flex w-full justify-center rounded-md bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
             <FontAwesomeIcon icon={faEllipsisVertical} />
           </Menu.Button>
         </div>
@@ -31,7 +32,7 @@ const DropdownComponent = () => {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <Menu.Items className="absolute right-0 z-10 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" style={{ marginTop: "-20px", marginLeft: "-10%"}}>
             <div className="py-1">
               <Menu.Item>
                 {({ active }) => (
@@ -301,152 +302,156 @@ const DropdownComponent = () => {
   );
 };
 
-const getData = () => {
-  const data = [
-    {
-      no: "1",
-      nama: "Samsung Note 20",
-      merk: "Samsung",
-      berat: "200",
-      stok: "10",
-      harga: "12000000",
-      diskon: "10.0.0.0",
-      imgUrl:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
-      act: <DropdownComponent />,
-    },
-    {
-      name: "Cody Fisher",
-      email: "cody.fisher@example.com",
-      title: "Product Directives Officer",
-      department: "Intranet",
-      status: "Inactive",
-      role: "Owner",
-      age: 43,
-      imgUrl:
-        "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
-    },
-    {
-      name: "Esther Howard",
-      email: "esther.howard@example.com",
-      title: "Forward Response Developer",
-      department: "Directives",
-      status: "Active",
-      role: "Member",
-      age: 32,
-      imgUrl:
-        "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
-    },
-    {
-      name: "Jenny Wilson",
-      email: "jenny.wilson@example.com",
-      title: "Central Security Manager",
-      department: "Program",
-      status: "Offline",
-      role: "Member",
-      age: 29,
-      imgUrl:
-        "https://images.unsplash.com/photo-1498551172505-8ee7ad69f235?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
-    },
-    {
-      name: "Kristin Watson",
-      email: "kristin.watson@example.com",
-      title: "Lean Implementation Liaison",
-      department: "Mobility",
-      status: "Inactive",
-      role: "Admin",
-      age: 36,
-      imgUrl:
-        "https://images.unsplash.com/photo-1532417344469-368f9ae6d187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
-    },
-    {
-      name: "Cameron Williamson",
-      email: "cameron.williamson@example.com",
-      title: "Internal Applications Engineer",
-      department: "Security",
-      status: "Active",
-      role: "Member",
-      age: 24,
-      imgUrl:
-        "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
-    },
-  ];
-  return [...data, ...data, ...data];
-};
-
 const Toko = () => {
-  const columns = React.useMemo(
-    () => [
-      {
-        Header: "No",
-        accessor: "no",
-      },
-      {
-        Header: "Username",
-        accessor: "gambar",
-        Cell: AvatarCell,
-        imgAccessor: "imgUrl",
-      },
-      {
-        Header: "Nama Lengkap",
-        accessor: "nama",
-      },
-      {
-        Header: "Level",
-        accessor: "merk",
-      },
-      {
-        Header: "Active",
-        // accessor: "berat",
-        Cell: row => {
-          return (<input type="checkbox" />)
-        }
-      },
-      {
-        Header: "Saldo",
-        accessor: "stok",
-      },
-      {
-        Header: "Parent_User_NA",
-        accessor: "harga",
-      },
-      {
-        Header: "IP Address",
-        accessor: "diskon",
-      },
-      {
-        Header: "No. HP / Telegram / Jabber",
-        accessor: "no_hp",
-      },
-      {
-        Header: "",
-        accessor: "act",
-      },
-    ],
-    []
-  );
+  const url = "http://localhost:3005/store"
+  const [store, setStore] = useState();
+  const [loading, setLoading] = useState(true);
 
-  const data = React.useMemo(() => getData(), []);
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get(url, {
+          data: {
+            USER_NAME: data.USER_NAME,
+            FULL_NAME: data.FULL_NAME,
+            LVL: data.LVL,
+            IS_ACTIVE: data.IS_ACTIVE,
+            BALANCE: data.BALANCE,
+            PARENT_USER_NAME: data.PARENT_USER_NAME,
+            IP_ADDR: data.IP_ADDR,
+            MSISDN_PULSA: data.MSISDN_PULSA
+          },
+        });
+        setStore(response.data);
+      } catch (error) {
+        console.error(error.message);
+      }
+      setLoading(false);
+    }
+    fetchData();
+  }, []);
 
   return (
-    <div className="flex h-full sm:h-full">
+    <div className="flex h-full sm:h-full bg-gray-200">
       <Sidebar />
       <div className="h-full sm:h-screen flex-1">
         <NavMenu />
-        <div className="container-fluid max-h-screen px-2" style={{ height: "auto" }}>
+        <div className="container-fluid max-h-screen pl-2 -pr-12" style={{ height: "auto", width: "auto", background: "#E5E7EB" }}>
           <h1 className="text-2xl font-semibold text-left ml-4 mt-2 mb-2">
             Toko Management
           </h1>
-          <div className="max-h-screen text-gray-900">
-            <main className="w-full sm:px-4 lg:px-8 pt-2">
-              <div className="">
-                <Table columns={columns} data={data} />
+          <div className='flex max-h-screen' style={{ width: "97%" }}>
+            <div className="rounded-xl border p-5 shadow-md h-full w-full bg-white">
+              <div className="overflow-auto relative shadow-md sm:rounded-lg">
+                <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                  <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                      <th scope="col" className="py-3 px-6">
+                        No
+                      </th>
+                      <th scope="col" className="py-3 px-6">
+                        <div className="flex items-center">
+                          Username
+                          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" className="ml-1 w-3 h-3" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"></path></svg></a>
+                        </div>
+                      </th>
+                      <th scope="col" className="py-3 px-6">
+                        <div className="flex items-center">
+                          Nama Lengkap
+                          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" className="ml-1 w-3 h-3" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"></path></svg></a>
+                        </div>
+                      </th>
+                      <th scope="col" className="py-3 px-6">
+                        <div className="flex items-center">
+                          Level
+                          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" className="ml-1 w-3 h-3" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"></path></svg></a>
+                        </div>
+                      </th>
+                      <th scope="col" className="py-3 px-6">
+                        <div className="flex items-center">
+                          Active
+                          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" className="ml-1 w-3 h-3" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"></path></svg></a>
+                        </div>
+                      </th>
+                      <th scope="col" className="py-3 px-6">
+                        <div className="flex items-center">
+                          Saldo
+                          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" className="ml-1 w-3 h-3" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"></path></svg></a>
+                        </div>
+                      </th>
+                      <th scope="col" className="py-3 px-6">
+                        <div className="flex items-center">
+                          Parent Username
+                          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" className="ml-1 w-3 h-3" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"></path></svg></a>
+                        </div>
+                      </th>
+                      <th scope="col" className="py-3 px-6">
+                        <div className="flex items-center">
+                          IP Address
+                          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" className="ml-1 w-3 h-3" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"></path></svg></a>
+                        </div>
+                      </th>
+                      <th scope="col" className="py-3 px-6">
+                        <div className="flex items-center">
+                          No HP / Telegram / Jabber
+                          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" className="ml-1 w-3 h-3" aria-hidden="true" fill="currentColor" viewBox="0 0 320 512"><path d="M27.66 224h264.7c24.6 0 36.89-29.78 19.54-47.12l-132.3-136.8c-5.406-5.406-12.47-8.107-19.53-8.107c-7.055 0-14.09 2.701-19.45 8.107L8.119 176.9C-9.229 194.2 3.055 224 27.66 224zM292.3 288H27.66c-24.6 0-36.89 29.77-19.54 47.12l132.5 136.8C145.9 477.3 152.1 480 160 480c7.053 0 14.12-2.703 19.53-8.109l132.3-136.8C329.2 317.8 316.9 288 292.3 288z"></path></svg></a>
+                        </div>
+                      </th>
+                      <th scope="col" className="py-3 px-6">
+                        <span className="sr-only">Edit</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  {loading && <div>Loading</div>}
+                  {!loading && (
+                    <tbody>
+                      {store.map((value, i) => {
+                        return (
+                          // <div>
+                          <tr key={i} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap text-center dark:text-white">
+                              {++i}
+                            </th>
+                            <td className="py-4 px-6 text-center">
+                              {value[0]}
+                            </td>
+                            <td className="py-4 px-6 text-center">
+                              {value[1]}
+                            </td>
+                            <td className="py-4 px-6 text-center">
+                              {value[2]}
+                            </td>
+                            <td className="py-4 px-6 text-center">
+                              <div className="flex items-center mb-4">
+                                <input id="default-checkbox" type="checkbox" value={value[3]} className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                              </div>
+                            </td>
+                            <td className="py-4 px-6 text-center">
+                              {value[4]}
+                            </td>
+                            <td className="py-4 px-6 text-center">
+                              {value[5]}
+                            </td>
+                            <td className="py-4 px-6 text-center">
+                              {value[6]}
+                            </td>
+                            <td className="py-4 px-6 text-center">
+                              {value[7]}
+                            </td>
+                            <td><DropdownComponent /></td>
+                          </tr>
+                        )
+                      })}
+                    </tbody>
+                  )}
+                </table>
               </div>
-            </main>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
+        </div >
+      </div >
+    </div >
   );
 };
 export default Toko;

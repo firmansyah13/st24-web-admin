@@ -142,6 +142,7 @@ function Table({ columns, data }) {
 
     const [showModal, setShowModal] = useState(false);
     // Render the UI for your table
+
     return (
         <>
             <div className="relative sm:flex sm:gap-x-2">

@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavMenu from "../Components/NavMenu";
 import Sidebar from "../Components/SidebarMenu";
 import { faKey } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Label, Checkbox, Select } from "flowbite-react";
+import axios from "axios";
+import { data } from "autoprefixer";
 
 const User = () => {
     const [showModal, setShowModal] = useState(false);
@@ -11,21 +13,46 @@ const User = () => {
     const togglePassword = () => {
         setShowPassword(!showPassword);
     }
+    const url = "http://localhost:3005/users"
+    const [users, setUsers] = useState();
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            setLoading(true);
+            try {
+                const response = await axios.get(url, {
+                    data: {
+                        KODE_USER: data.KODE_USER,
+                        KET: data.KET
+                    },
+                });
+
+                setUsers(response.data);
+                // console.log(response.data);
+            } catch (error) {
+                console.error(error.message);
+            }
+            setLoading(false);
+        }
+        fetchData();
+    }, []);
+
     return (
-        <div className="flex h-full sm:h-full">
+        <div className="flex h-full sm:h-full bg-gray-200">
             <Sidebar />
             <div className="h-full sm:h-screen flex-1">
                 <NavMenu />
-                <div className="container-fluid max-h-screen px-2" style={{ height: "auto" }}>
+                <div className="container-fluid max-h-screen px-2" style={{ height: "auto", background: "#E5E7EB" }}>
                     <h1 className="text-2xl font-semibold text-left ml-4 mt-2 mb-2">
                         User Administration
                     </h1>
-                    <div class='flex max-h-screen'>
-                        <div class="rounded-xl border p-5 shadow-md h-full w-full bg-white">
+                    <div className='flex max-h-screen'>
+                        <div className="rounded-xl border p-5 shadow-md h-full w-full bg-white">
                             <div className="grid grid-cols-3 gap-4 -pb-4">
                                 <div className="col-span-2">
                                     <form className="flex items-center w-full">
-                                        <label for="simple-search" className="sr-only">Search</label>
+                                        <label htmlFor="simple-search" className="sr-only">Search</label>
                                         <div className="relative w-full">
                                             <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                                                 <svg aria-hidden="true" className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd"></path></svg>
@@ -49,14 +76,14 @@ const User = () => {
                                                 <div role="alert" className="container mx-auto w-11/12 md:w-2/3 max-w-lg">
                                                     <div className="relative py-8 px-5 md:px-10 bg-white shadow-md rounded border border-gray-400">
                                                         <h1 className="text-gray-800 font-lg font-bold tracking-normal leading-tight mb-4">Enter Billing Details</h1>
-                                                        <label for="input-group-1" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">User Login</label>
+                                                        <label htmlFor="input-group-1" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">User Login</label>
                                                         <div className="relative mb-6">
                                                             <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                                                                 <svg aria-hidden="true" className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
                                                             </div>
-                                                            <input type="text" id="input-group-1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com" required />
+                                                            <input type="text" id="input-group-1" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com" required />
                                                         </div>
-                                                        <label for="cvc" className="text-gray-800 text-sm font-bold leading-tight tracking-normal">CVC</label>
+                                                        <label htmlFor="cvc" className="text-gray-800 text-sm font-bold leading-tight tracking-normal">CVC</label>
                                                         <div className="relative mb-5 mt-2">
                                                             <div className="absolute right-0 text-gray-600 flex items-center pr-3 h-full cursor-pointer">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-info-circle" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -90,7 +117,7 @@ const User = () => {
                             <div class="-mt-6 mb-6 border-t">
                                 <div className="mt-6">
                                     <div>
-                                        <label for="input-group-1" className="block mb-1 text-sm font-medium text-gray-900 dark:text-gray-300">User Login</label>
+                                        <label htmlFor="input-group-1" className="block mb-1 text-sm font-medium text-gray-900 dark:text-gray-300">User Login</label>
                                         <div className="relative mb-6">
                                             <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                                                 <svg aria-hidden="true" className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
@@ -99,7 +126,7 @@ const User = () => {
                                         </div>
                                     </div>
                                     <div>
-                                        <label for="input-group-1" className="block mb-1 text-sm font-medium text-gray-900 dark:text-gray-300">Password</label>
+                                        <label htmlFor="input-group-1" className="block mb-1 text-sm font-medium text-gray-900 dark:text-gray-300">Password</label>
                                         <div className="relative mb-6">
                                             <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                                                 <svg aria-hidden="true" className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" stroke="currentColor" viewBox="0 0 448 512">
@@ -220,23 +247,14 @@ const User = () => {
                                 <label className="block mb-1 text-sm font-medium text-gray-900 dark:text-gray-300">User Level</label>
                                 <div className="grid grid-cols-3 gap-4">
                                     <div id="select" className="col-span-2">
-                                        <Select
-                                            id="countries"
-                                            required={true}
-                                        >
-                                            <option>
-                                                ADM
-                                            </option>
-                                            <option>
-                                                ADMINISTRATION
-                                            </option>
-                                            <option>
-                                                OPR
-                                            </option>
-                                            <option>
-                                                SUPERVISOR
-                                            </option>
-                                        </Select>
+                                        {loading && <div>Loading</div>}
+                                        {!loading && (
+                                            <Select>
+                                                {users.map(item =>
+                                                    <option value={item[1]}>{item[1]}</option>
+                                                )}
+                                            </Select>
+                                        )}
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <Checkbox id="remember" />

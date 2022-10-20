@@ -6,11 +6,11 @@ import { Table } from "flowbite-react";
 
 const Logs = () => {
     return (
-        <div className="flex h-full sm:h-full">
+        <div className="flex h-full sm:h-full bg-gray-200">
             <Sidebar />
             <div className="h-full sm:h-screen flex-1">
                 <NavMenu />
-                <div className="container-fluid px-2" style={{ height: "auto" }}>
+                <div className="container-fluid px-2" style={{ height: "auto", background: "#E5E7EB" }}>
                     <h1 className="text-2xl font-semibold text-left mt-2 mb-2">Logs History</h1>
                     <div className='flex max-h-screen'>
                         <div className="rounded-xl border p-5 shadow-md h-full w-full bg-white">

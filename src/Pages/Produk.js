@@ -425,11 +425,11 @@ const Toko = () => {
   const data = React.useMemo(() => getData(), []);
 
   return (
-    <div className="flex h-full sm:h-full">
+    <div className="flex h-full sm:h-full bg-gray-200">
       <Sidebar />
       <div className="h-full sm:h-screen flex-1">
         <NavMenu />
-        <div className="container-fluid max-h-screen px-2" style={{ height: "auto" }}>
+        <div className="container-fluid max-h-screen px-2" style={{ height: "auto", background: "#E5E7EB" }}>
           <h1 className="text-2xl font-semibold text-left ml-4 mt-2 mb-2">
             Produk Management
           </h1>
