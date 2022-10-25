@@ -10,6 +10,11 @@ const Price = () => {
                 <NavMenu />
                 <div className="container-fluid px-2" style={{ height: "auto", background: "#E5E7EB" }}>
                     <h1 className="text-2xl font-semibold text-left mt-2 mb-2">Price</h1>
+                    <div className='flex max-h-screen'>
+                        <div className="rounded-xl border p-5 shadow-md h-full w-full bg-white">
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
