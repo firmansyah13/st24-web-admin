@@ -56,16 +56,8 @@ const Logs = () => {
                                                 Clear All Filter
                                             </button>
                                         </div>
-                                        {/* <div>
-                                            <label htmlFor="countries" className="block mb-2 text-sm text-left font-medium text-gray-900 dark:text-gray-400">In/Out</label>
-                                            <select id="countries" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                                <option>Tampilkan Semua</option>
-                                                <option value="">1</option>
-                                            </select>
-                                        </div> */}
                                     </div>
-                                    <div>
-                                        
+                                    <div> 
                                         <div className="mb-3">
                                             <button type="submit" className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                                                 <FaSearch className="mr-2" />

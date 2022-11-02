@@ -71,7 +71,7 @@ const Report = () => {
                                                             Edit
                                                         </button>
                                                         {showModal ? (
-                                                            <>
+                                                            <form>
                                                                 <div className="flex mt-12 py-12 w-auto overflow-x-hidden overflow-y-auto z-10 fixed top-0 right-0 bottom-0 left-0 outline-none focus:outline-none w-full md:inset-0 h-modal md:h-full">
                                                                     <div
                                                                         role="alert"
@@ -229,7 +229,7 @@ const Report = () => {
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </>
+                                                            </form>
                                                         ) : null}
                                                     </Table.Cell>
                                                 </Table.Row>

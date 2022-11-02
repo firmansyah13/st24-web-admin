@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import Table, { AvatarCell } from "./ProdukTable";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
@@ -7,6 +7,9 @@ import NavMenu from "../Components/NavMenu";
 import Sidebar from "../Components/SidebarMenu";
 import Dela from "./dela.png";
 import Dina from "./dina.png";
+import axios from "axios";
+import { TableContext } from "flowbite-react/lib/esm/components/Table/TableContext";
+import { TableHead } from "flowbite-react/lib/esm/components/Table/TableHead";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -303,78 +306,123 @@ const DropdownComponent = () => {
   );
 };
 
+// const url = "http://localhost:3005/product"
+// const [product, setProduct] = useState();
+// const [loading, setLoading] = useState(true);
+// useEffect(() => {
+//   const fetchData = async () => {
+//     setLoading(true);
+//     try {
+//       const response = await axios.get(url, {
+//         data: {
+//           IMAGE1: data.IMAGE1,
+//           PRODUCT_NAME: data.PRODUCT_NAME,
+//           BRAND: data.BRAND,
+//           WEIGHT: data.WEIGHT,
+//           STOCK: data.STOCK,
+//           PRICE: data.PRICE,
+//           DISCOUNT: data.DISCOUNT
+//         },
+//       });
+//       setProduct(response.data);
+//     } catch (error) {
+//       console.error(error.message);
+//     }
+//     setLoading(false);
+//   }
+//   fetchData();
+// }, []);
+
 const getData = () => {
-  const data = [
-    {
-      no: "1",
-      nama: "Contoh 1",
-      merk: "Samsung",
-      berat: "200",
-      stok: "10",
-      harga: "12000000",
-      diskon: "0",
-      imgUrl:
-        Dela,
-      act: <DropdownComponent />,
-    },
-    {
-      no: "2",
-      nama: "Contoh 2",
-      merk: "Samsung",
-      berat: "200",
-      stok: "10",
-      harga: "12000000",
-      diskon: "0",
-      imgUrl:
-        Dina,
-      act: <DropdownComponent />,
-    },
-    {
-      name: "Esther Howard",
-      email: "esther.howard@example.com",
-      title: "Forward Response Developer",
-      department: "Directives",
-      status: "Active",
-      role: "Member",
-      age: 32,
-      imgUrl:
-        "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
-    },
-    {
-      name: "Jenny Wilson",
-      email: "jenny.wilson@example.com",
-      title: "Central Security Manager",
-      department: "Program",
-      status: "Offline",
-      role: "Member",
-      age: 29,
-      imgUrl:
-        "https://images.unsplash.com/photo-1498551172505-8ee7ad69f235?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
-    },
-    {
-      name: "Kristin Watson",
-      email: "kristin.watson@example.com",
-      title: "Lean Implementation Liaison",
-      department: "Mobility",
-      status: "Inactive",
-      role: "Admin",
-      age: 36,
-      imgUrl:
-        "https://images.unsplash.com/photo-1532417344469-368f9ae6d187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
-    },
-    {
-      name: "Cameron Williamson",
-      email: "cameron.williamson@example.com",
-      title: "Internal Applications Engineer",
-      department: "Security",
-      status: "Active",
-      role: "Member",
-      age: 24,
-      imgUrl:
-        "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
-    },
-  ];
-  return [...data, ...data, ...data];
+
+  //   product.map((product, i) => (
+  //     data = 
+  //       {
+  //         no: ++i,
+  //         imgUrl: product[0],
+  //         nama: product[1],
+  //         merk: product[2],
+  //         berat: product[3],
+  //         stok: product[4],
+  //         harga: product[5],
+  //         diskon: product[6],
+  //         act: <DropdownComponent />
+  //       }
+  //     )
+  // };
+  // return [...data, ...data, ...data];
+
+  // const data = [
+  //   {
+  //     no: "1",
+  //     nama: "Contoh 1",
+  //     merk: "Samsung",
+  //     berat: "200",
+  //     stok: "10",
+  //     harga: "12000000",
+  //     diskon: "0",
+  //     imgUrl:
+  //       Dela,
+  //     act: <DropdownComponent />,
+  //   },
+  //   {
+  //     no: "2",
+  //     nama: "Contoh 2",
+  //     merk: "Samsung",
+  //     berat: "200",
+  //     stok: "10",
+  //     harga: "12000000",
+  //     diskon: "0",
+  //     imgUrl:
+  //       Dina,
+  //     act: <DropdownComponent />,
+  //   },
+  //   {
+  //     name: "Esther Howard",
+  //     email: "esther.howard@example.com",
+  //     title: "Forward Response Developer",
+  //     department: "Directives",
+  //     status: "Active",
+  //     role: "Member",
+  //     age: 32,
+  //     imgUrl:
+  //       "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+  //   },
+  //   {
+  //     name: "Jenny Wilson",
+  //     email: "jenny.wilson@example.com",
+  //     title: "Central Security Manager",
+  //     department: "Program",
+  //     status: "Offline",
+  //     role: "Member",
+  //     age: 29,
+  //     imgUrl:
+  //       "https://images.unsplash.com/photo-1498551172505-8ee7ad69f235?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+  //   },
+  //   {
+  //     name: "Kristin Watson",
+  //     email: "kristin.watson@example.com",
+  //     title: "Lean Implementation Liaison",
+  //     department: "Mobility",
+  //     status: "Inactive",
+  //     role: "Admin",
+  //     age: 36,
+  //     imgUrl:
+  //       "https://images.unsplash.com/photo-1532417344469-368f9ae6d187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+  //   },
+  //   {
+  //     name: "Cameron Williamson",
+  //     email: "cameron.williamson@example.com",
+  //     title: "Internal Applications Engineer",
+  //     department: "Security",
+  //     status: "Active",
+  //     role: "Member",
+  //     age: 24,
+  //     imgUrl:
+  //       "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+  //   },
+  // ];
+  // return [...data, ...data, ...data];
 };
 
 const Toko = () => {
@@ -436,7 +484,19 @@ const Toko = () => {
           <div className="max-h-screen text-gray-900">
             <main className="w-full sm:px-4 lg:px-8 pt-2">
               <div className="">
-                <Table columns={columns} data={data} />
+                <Table columns={columns}>
+                  <tbody>
+                    {/* {product.map((value, i) => {
+                      return (
+                        <tr key={i}>
+                          <th>{i++}</th>
+                          <td>{value[0]}</td>
+                        </tr>
+                      )
+                    }
+                    )} */}
+                  </tbody>
+                </Table>
               </div>
             </main>
           </div>
